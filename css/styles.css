@@ -56,8 +56,8 @@ input[type=text] {
   background-color: rgba(0, 0, 0, 0);
 }
 .player-button {
-  width: 20%;
-  float: left;
+  /* width: 20%; */
+  /* float: left; */
   text-align: center;
   background-color: #b0c61b;
   box-shadow: 5px 10px 18px black;
@@ -67,9 +67,8 @@ input[type=text] {
 
 }
 .start-button:hover {
-  back
+  /* back */
 }
-
 
 .button {
     display: inline-block;
