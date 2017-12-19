@@ -187,84 +187,103 @@ input[type=text] {
 .gameboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
 }
 
 .one {
-  background-color: white;
+  background-image: url("../img/jumanjihead.gif");
+  height: 200px;
+  border-radius: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   grid-column: 1 / 5;
   grid-row: 1;
 }
 .two {
-  background-color: white;
+  border: 5px solid #254A11;
+  background-color: #4FE863;
   grid-column: 1;
   grid-row: 2;
 }
 .three {
-  background-color: white;
+  border: 5px solid #254A11;
+  background-color: #4F9E24;
   grid-column: 2;
   grid-row: 2;
 }
 .four {
+  border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 2;
-  background-color: white;
+  background-color: #A48D4D;
 }
 .five {
+  border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 2;
-  background-color: white;
+  background-color: #DCD364;
 }
 .six {
+  border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 3;
-  background-color: white;
+  background-color: #7BA714;
 }
 .seven {
+  border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 4;
-  background-color: white;
+  background-color: #4FE863;
 }
 .eight {
+  border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 4;
-  background-color: white;
+  background-color: #4F9E24;
 }
 
 .nine {
+  border: 5px solid #254A11;
   grid-column: 2;
   grid-row: 4;
-  background-color: white;
+  background-color: #A48D4D;
 }
 
 .ten {
+  border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 4;
-  background-color: white;
+  background-color: #DCD364;
 }
 .eleven {
+  border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 5;
-  background-color: white;
+  background-color: #7BA714;
 }
 .twelve {
+  border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 6;
-  background-color: white;
+  background-color: #4FE863;
 }
 .thirteen {
+  border: 5px solid #254A11;
   grid-column: 2;
   grid-row: 6;
-  background-color: white;
+  background-color: #4F9E24;
 }
 .forteen {
+  border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 6;
-  background-color: white;
+  background-color: #A48D4D;
 }
 .fifteen {
+  border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 6;
-  background-color: white;
+  background-color: #DCD364;
 }
