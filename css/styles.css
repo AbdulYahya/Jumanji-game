@@ -179,3 +179,15 @@ input[type=text] {
     -o-transition-delay: 0s;
     transition-delay: 0s;
 }
+
+.winner {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  display: none;
+}
+
+img {
+  width: 1000px;
+  height: auto;
+}
