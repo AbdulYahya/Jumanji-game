@@ -20,56 +20,103 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player1name"></span><span class="caret"></span> </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position: </a>
+            <a class="nav-link dropdown-toggle" href="#" id="playerOneDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="playerOneName"></span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="playerOneDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position:</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player2name"></span><span class="caret"></span> </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position: </a>
+            <a class="nav-link dropdown-toggle" href="#" id="playerTwoDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="playerTwoName"></span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="playerTwoDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position:</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player3name"></span><span class="caret"></span> </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position: </a>
+            <a class="nav-link dropdown-toggle" href="#" id="playerThreeDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="playerThreeName"></span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="playerThreeDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position:</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player4name"></span><span class="caret"></span> </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position: </a>
+            <a class="nav-link dropdown-toggle" href="#" id="playerFourDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="playerFourName"></span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="playerFourDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position:</a>
             </div>
           </li>
         </ul>
       </div>
-</nav>
+    </nav>
 
     <div class="container">
-        <form class="playerNameInput" action="index.html" method="post">
-          <div class="card nobg">
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card card-text">
-              <img src="https://media1.tenor.com/images/f0f6a53e123cb2badcd0218fa7d7569b/tenor.gif?itemid=7395665" class="center-image">
-              <input id="player1" type="text" name="Player1" placeholder="Player1"><button class="player-button" type="button" name="button">Ready!</button>
-              <img src="https://media.tenor.com/images/342ef2459ff62eefd74d4ee69de6070b/tenor.gif" class="center-image">
-              <input id="player2" type="text" name="Player2" placeholder="Player2"><button class="player-button" type="button" name="button">Ready!</button>
-            </div>
-          </div>
+      <div class="card nobg">
+        <div class="row">
           <div class="col-md-6">
             <div class="card card-text">
-              <img src="https://indiescifi451.files.wordpress.com/2017/07/videotogif_2017-07-02_15-37-02.gif?w=260&h=195" class="center-image">
-              <input id="player3" type="text" name="Player3" placeholder="Player3"><button class="player-button" type="button" name="button">Ready!</button>
-              <img src="https://78.media.tumblr.com/99e449fd719a99ae268b44b734125c74/tumblr_osbm2lwJTf1qgwefso4_400.gif" class="center-image">
-              <input id="player4" type="text" name="Player4" placeholder="Player4"><button class="player-button" type="button" name="button">Ready!</button>
+              <img class="mt-5 center-image" src="https://media1.tenor.com/images/f0f6a53e123cb2badcd0218fa7d7569b/tenor.gif?itemid=7395665">
+              <form id="playerOneRegistrationForm">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="playerOneNameInput" name="PlayerOne" placeholder="Player One">
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                  </div>
+                </div>
+              </form>
+              <div class="playerReady"></div>
+              <!-- <div class="card border-success playerReadyAnimation">
+                <div class="card-body text-success">
+                  PLAYER READY!
+                </div>
+              </div> -->
+
+              <img class="mt-5 center-image" src="https://media.tenor.com/images/342ef2459ff62eefd74d4ee69de6070b/tenor.gif">
+              <form id="playerTwoRegistrationForm">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="playerTwoNameInput" name="PlayerTwo" placeholder="Player Two">
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-text">
+              <img class="mt-5 center-image" src="https://indiescifi451.files.wordpress.com/2017/07/videotogif_2017-07-02_15-37-02.gif?w=260&h=195">
+              <form id="playerThreeRegistrationForm">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="playerThreeNameInput" name="PlayerThree" placeholder="Player Three">
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                  </div>
+                </div>
+              </form>
+
+              <img class="mt-5 center-image" src="https://78.media.tumblr.com/99e449fd719a99ae268b44b734125c74/tumblr_osbm2lwJTf1qgwefso4_400.gif">
+              <form id="playerFourRegistrationForm">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="playerFourNameInput" name="PlayerFour" placeholder="Player Four">
+                  </div>
+                  <div class="col">
+                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
