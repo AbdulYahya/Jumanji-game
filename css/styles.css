@@ -180,6 +180,11 @@ input[type=text] {
     transition-delay: 0s;
 }
 
+img {
+  width: 1000px;
+  height: auto;
+}
+
 .playerReadyAnimation {
   animation-duration: 1.5s;
   animation-name: slidein;
@@ -210,8 +215,18 @@ input[type=text] {
 h4, .display-4 {
   font-size: 2rem;
 }
-@keyframes buttonTransition {
 
+/* CENTERED WINNER RESULT  */
+html, body {
+  height: 100%;
 }
-
-/* Codepen Button */
+.row.justify-content-center.align-items-center {
+  height: 100%;
+  min-height: 50%;
+}
+.winner {
+  display: none;
+}
+.hidden{
+  display: none;
+}

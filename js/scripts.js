@@ -44,7 +44,12 @@ function playerReadyRegistrationForms () {
 }
 
 
+
 // Document Ready Function
 $(function () {
   playerReadyRegistrationForms();
+  setTimeout(function () {
+      $('.main-cont').addClass('hidden');
+      $('.winner').show();
+    }, 3000);
 });
