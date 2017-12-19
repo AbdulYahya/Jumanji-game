@@ -33,9 +33,11 @@ function throwDie(){
 // 'use strict';
 //
 //
+// Capitalize function
+function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
 // Player Ready Animation
-function playerReady (divId, playerName) {
-  divId.html('<div class="card border-success playerReadyAnimation">' +
+function playerReady (playerReadyDivId, playerName) {
+  $(playerReadyDivId).html('<div class="card border-success playerReadyAnimation">' +
                            '<div class="text-success">' +
                              '<h4 class="display-4 mb-0">Player ' +
                               playerName + ' is ready!</h4>' +
@@ -52,41 +54,48 @@ function playerReadyRegistrationForms () {
   playerOneRegistrationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     event.stopPropagation();
-    $('#player1name').text($('#player1').val());
-    if (!$('#player1').val() == "") {
+    var player = Capitalize($('#player1').val());
+
+    if (!player == "") {
+      $('#player1name').text(player);
       $('#player1RegistrationForm').hide();
-      playerReady($('#player1Ready'), $('#player1').val());
+      playerReady('#player1Ready', player);
     }
   });
 
   playerTwoRegistrationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     event.stopPropagation();
-    $('#player2name').text($('#player2').val());
-    if (!$('#player2').val() == "") {
+    var player = Capitalize($('#player2').val());
+
+    if (!player == "") {
+      $('#player2name').text(player);
       $('#player2RegistrationForm').hide();
-      playerReady($('#player2Ready'), $('#player2').val());
+      playerReady('#player2Ready', player);
     }
   });
 
   playerThreeRegistrationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     event.stopPropagation();
-    $('#player3name').text($('#player3').val());
-    if (!$('#player3').val() == "") {
-      $('#player3RegistrationForm').hide();
-      playerReady($('#player3Ready'), $('#player3').val());
-    }
+    var player = Capitalize($('#player3').val());
 
+    if (!$('#player3').val() == "") {
+      $('#player3name').text(player);
+      $('#player3RegistrationForm').hide();
+      playerReady('#player3Ready', player);
+    }
   });
 
   playerFourRegistrationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     event.stopPropagation();
-    $('#player4name').text($('#player4').val());
+    var player = Capitalize($('#player4').val());
+
     if (!$('#player4').val() == "") {
+      $('#player4name').text(player);
       $('#player4RegistrationForm').hide();
-      playerReady($('#player4Ready'), $('#player4').val());
+      playerReady($('#player4Ready'), player);
     }
   });
 }
