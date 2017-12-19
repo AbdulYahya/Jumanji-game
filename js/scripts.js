@@ -1,5 +1,13 @@
 'use strict';
 
+// Player Ready Animation
+function playerReady () {
+  $('.playerReady').html('<div class="card border-success playerReadyAnimation">' +
+                           '<div class="card-body text-success">' +
+                             '<h4 class="display-4 mb-0">PLAYER READY!</h4>' +
+                           '</div>' +
+                         '</div>');
+}
 // Grab info from playerRegistrationForm
 function playerReadyRegistrationForms () {
   var playerOneRegistrationForm = document.getElementById('playerOneRegistrationForm');
@@ -11,6 +19,8 @@ function playerReadyRegistrationForms () {
     event.preventDefault();
     event.stopPropagation();
     $('#playerOneName').text($('#playerOneNameInput').val());
+    $('#playerOneRegistrationForm').hide();
+    playerReady();
   });
 
   playerTwoRegistrationForm.addEventListener('submit', function (event) {
