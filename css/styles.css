@@ -29,8 +29,12 @@ body {
   background-image: url("../img/jungle.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
+h4, .display-4 {
+  font-size: 2rem;
+}
 .card-text {
   margin-top: 20px;
   padding-left: 10%;
@@ -42,14 +46,12 @@ body {
 
 input[type=text] {
     width: 100%;
-    padding: 12px 10px;
-    margin: 8px 0;
+    margin: 1rem 0;
     box-shadow: 5px 10px 18px black;
     box-sizing: border-box;
     border: none;
     background-color: #b0c61b;
     color: white;
-    float: left;
     font-style: italic;
 }
 
@@ -58,15 +60,15 @@ input[type=text] {
   background-color: rgba(0, 0, 0, 0);
 }
 .player-button {
-  width: 20%;
-  margin-left: 37%;
   text-align: center;
   background-color: #b0c61b;
+  border: none;
   box-shadow: 5px 10px 18px black;
-  margin-bottom: 15px;
   font-style: italic;
 }
-
+.span-pg {
+  width: 100%;
+}
 .start-button {
 
 }
@@ -77,11 +79,11 @@ input[type=text] {
 
 .button {
     display: inline-block;
-    position: relative;
-    margin: 1em;
-    padding: 0.67em;
+    /* position: relative; */
+    margin-top: 1em;
+    /* padding: 0.67em; */
     border: 2px solid #FFF;
-    overflow: hidden;
+    /* overflow-y: hidden; */
     text-decoration: none;
     font-size: 2em;
     outline: none;
@@ -105,7 +107,6 @@ input[type=text] {
 .button:after {
     content: '';
     position: absolute;
-    top: 0.67em;
     left: 0;
     width: 100%;
     text-align: center;
@@ -185,13 +186,42 @@ input[type=text] {
     transition-delay: 0s;
 }
 
+.playerReadyAnimation {
+  animation-duration: 1.5s;
+  animation-name: slidein;
+  /* animation-name: fadein; */
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    width: 60%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .gameboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
 }
-
+.hidden {
+  display: none;
+}
 .grid15 {
   background-image: url("../img/jumanjihead.gif");
   height: 300px;
