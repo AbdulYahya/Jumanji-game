@@ -24,3 +24,6 @@ function nextPlayer(players){
     }
   }
 }
+function throwDie(){
+  return Math.floor((Math.random() * 6) + 1);
+}
