@@ -12,7 +12,7 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-custom">
       <a class="navbar-brand nav-color" href="#">Players</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,35 +20,35 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="playerOneDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="playerOneName"></span><span class="caret"></span>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="player1name">Player 1</span><span class="caret"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="playerOneDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position:</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="playerTwoDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="playerTwoName"></span><span class="caret"></span>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="player2name">Player 2</span><span class="caret"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="playerTwoDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position:</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="playerThreeDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="playerThreeName"></span><span class="caret"></span>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="player3name">Player 3</span><span class="caret"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="playerThreeDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position:</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="playerFourDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="playerFourName"></span><span class="caret"></span>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="player4name">Player 4</span><span class="caret"></span>
             </a>
-            <div class="dropdown-menu" aria-labelledby="playerFourDropdownMenuLink">
-              <a class="dropdown-item" href="#">Current Position:</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
         </ul>
@@ -60,91 +60,92 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card card-text">
-              <img class="mt-5 center-image" src="https://media1.tenor.com/images/f0f6a53e123cb2badcd0218fa7d7569b/tenor.gif?itemid=7395665">
-              <form id="playerOneRegistrationForm">
-                <div class="row">
+              <img class="center-image mt-5" src="https://media1.tenor.com/images/f0f6a53e123cb2badcd0218fa7d7569b/tenor.gif?itemid=7395665">
+              <form id="player1RegistrationForm">
+                <div class="row align-items-center">
                   <div class="col">
-                    <input type="text" class="form-control" id="playerOneNameInput" name="PlayerOne" placeholder="Player One">
+                    <input type="text" class="form-control" id="player1" name="Player1" placeholder="Player1">
                   </div>
                   <div class="col">
-                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                    <button type="submit" class="btn btn-success player-button float-right">Ready!</button>
                   </div>
                 </div>
               </form>
-              <div class="playerReady"></div>
-              <!-- <div class="card border-success playerReadyAnimation">
-                <div class="card-body text-success">
-                  PLAYER READY!
-                </div>
-              </div> -->
+              <div class="mt-3" id="player1Ready"></div>
 
-              <img class="mt-5 center-image" src="https://media.tenor.com/images/342ef2459ff62eefd74d4ee69de6070b/tenor.gif">
-              <form id="playerTwoRegistrationForm">
-                <div class="row">
+              <img class="center-image mt-5" src="https://media.tenor.com/images/342ef2459ff62eefd74d4ee69de6070b/tenor.gif">
+              <form id="player2RegistrationForm">
+                <div class="row align-items-center">
                   <div class="col">
-                    <input type="text" class="form-control" id="playerTwoNameInput" name="PlayerTwo" placeholder="Player Two">
+                    <input type="text" class="form-control" id="player2" name="Player2" placeholder="Player2">
                   </div>
                   <div class="col">
-                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                    <button type="submit" class="btn btn-success player-button float-right">Ready!</button>
                   </div>
                 </div>
               </form>
+              <div class="mt-3" id="player2Ready"></div>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="card card-text">
-              <img class="mt-5 center-image" src="https://indiescifi451.files.wordpress.com/2017/07/videotogif_2017-07-02_15-37-02.gif?w=260&h=195">
-              <form id="playerThreeRegistrationForm">
-                <div class="row">
+              <img class="center-image mt-5" src="https://indiescifi451.files.wordpress.com/2017/07/videotogif_2017-07-02_15-37-02.gif?w=260&h=195">
+              <form id="player3RegistrationForm">
+                <div class="row align-items-center">
                   <div class="col">
-                    <input type="text" class="form-control" id="playerThreeNameInput" name="PlayerThree" placeholder="Player Three">
+                    <input type="text" class="form-control" id="player3" name="Player3" placeholder="Player3">
                   </div>
                   <div class="col">
-                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                    <button type="submit" class="btn btn-success player-button float-right">Ready!</button>
                   </div>
                 </div>
               </form>
+              <div class="mt-3" id="player3Ready"></div>
 
-              <img class="mt-5 center-image" src="https://78.media.tumblr.com/99e449fd719a99ae268b44b734125c74/tumblr_osbm2lwJTf1qgwefso4_400.gif">
-              <form id="playerFourRegistrationForm">
-                <div class="row">
+              <img class="center-image mt-5" src="https://78.media.tumblr.com/99e449fd719a99ae268b44b734125c74/tumblr_osbm2lwJTf1qgwefso4_400.gif">
+              <form id="player4RegistrationForm">
+                <div class="row align-items-center">
                   <div class="col">
-                    <input type="text" class="form-control" id="playerFourNameInput" name="PlayerFour" placeholder="Player Four">
+                    <input type="text" class="form-control" id="player4" name="Player4" placeholder="Player4">
                   </div>
                   <div class="col">
-                    <button type="submit" class="btn-lg btn-success player-button">Ready!</button>
+                    <button type="submit" class="btn btn-success player-button float-right">Ready!</button>
                   </div>
                 </div>
               </form>
+              <div class="mt-3" id="player4Ready"></div>
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      </form>
-      <button class="button" type="button" name="button" data-hover="JUMANJI" data-active="I'M ACTIVE"><span>PLAY!</span></button>
-    </div>
-    <div class="gameboard">
-      <div class="one">One</div>
-      <div class="two">Two</div>
-      <div class="three">Three</div>
-      <div class="four">Four</div>
-      <div class="five">Five</div>
-      <div class="six">Six</div>
-      <div class="seven">Seven</div>
-      <div class="eight">Eight</div>
-      <div class="nine">Nine</div>
-      <div class="ten">Ten</div>
-      <div class="eleven">Eleven</div>
-      <div class="twelve">Twelve</div>
-      <div class="thirteen">Thirteen</div>
-      <div class="forteen">Forteen</div>
-      <div class="fifteen">Fifteen</div>
-    </div>
-=======
-        <button class="button" type="button" name="button" data-hover="JUMANJI" data-active="I'M ACTIVE"><span>PLAY!</span></button>
       </div>
->>>>>>> 5c8c020e1b3b1f3cfcc7e3340b359ea8797d4964
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <button type="button" class="btn btn-success button span-pg"  data-hover="JUMANJI" data-active="I'M ACTIVE">
+              <span>PLAY!</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gameboard hidden">
+        <div class="grid15">fifteen</div>
+        <div class="grid14">fourteen</div>
+        <div class="grid13">thirteen</div>
+        <div class="grid12">twelve</div>
+        <div class="grid11">eleven</div>
+        <div class="grid10">ten</div>
+        <div class="grid9">nine</div>
+        <div class="grid8">eight</div>
+        <div class="grid7">seven</div>
+        <div class="grid6">six</div>
+        <div class="grid5b">fiveb</div>
+        <div class="grid5">five</div>
+        <div class="grid4">four</div>
+        <div class="grid3">three</div>
+        <div class="grid2">two</div>
+        <div class="grid1">START</div>
+      </div>
     </div>
   </body>
 </html>
