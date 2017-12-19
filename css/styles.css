@@ -202,5 +202,27 @@ img {
       linear-gradient(-120deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) top no-repeat,
       linear-gradient(300deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) bottom no-repeat ;
     background-size: 100% 50%;
-    color:white
+    color:#b5e5b5
 }
+
+.box {
+  background-color: #10601c !important;
+  color: #b5e5b5 !important;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 75%;
+  align-items: center;
+}
+
+.box:nth-child(even) {
+  background-color: #b5e5b5 !important;
+  color: #b5e5b5 !important;
+}
+
+    .wrapper {
+        display: grid;
+    /*border:1px solid #000;*/
+    grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, 80px 160px);
+        margin: auto;
+    }
