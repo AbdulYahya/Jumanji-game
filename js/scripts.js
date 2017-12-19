@@ -29,11 +29,7 @@ function throwDie(){
 }
 
 //
-<<<<<<< HEAD
 //                USER INTERFACE
-=======
-//                USER INTERFACE
->>>>>>> frontend
 // 'use strict';
 //
 //
