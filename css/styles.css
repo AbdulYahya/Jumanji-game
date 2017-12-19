@@ -27,7 +27,7 @@
 
 body {
   background-image: url("../img/jungle.jpg");
-  background-position: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -54,6 +54,7 @@ input[type=text] {
 }
 
 .nobg {
+  border: 0px;
   background-color: rgba(0, 0, 0, 0);
 }
 .player-button {
@@ -191,99 +192,113 @@ input[type=text] {
   grid-auto-rows: minmax(100px, auto);
 }
 
-.one {
+.grid15 {
   background-image: url("../img/jumanjihead.gif");
-  height: 200px;
+  height: 300px;
+  width: 580px;
   border-radius: 50%;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  grid-column: 1 / 5;
+  grid-column: 2 / 5;
   grid-row: 1;
+
 }
-.two {
+
+.grid14 {
   border: 5px solid #254A11;
   background-color: #4FE863;
   grid-column: 1;
   grid-row: 2;
 }
-.three {
+.grid13 {
   border: 5px solid #254A11;
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 2;
 }
-.four {
+.grid12 {
   border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 2;
   background-color: #A48D4D;
 }
-.five {
+.grid11 {
   border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 2;
   background-color: #DCD364;
 }
-.six {
+.grid10 {
   border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 3;
   background-color: #7BA714;
 }
-.seven {
+.grid9 {
   border: 5px solid #254A11;
   grid-column: 4;
   grid-row: 4;
   background-color: #4FE863;
 }
-.eight {
+.grid8 {
   border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 4;
   background-color: #4F9E24;
 }
 
-.nine {
+.grid7 {
   border: 5px solid #254A11;
   grid-column: 2;
   grid-row: 4;
   background-color: #A48D4D;
 }
 
-.ten {
+.grid6 {
   border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 4;
   background-color: #DCD364;
 }
-.eleven {
+.grid5b {
+  grid-column: 2 / 5;
+  grid-row: 5;
+  /*background-image: url("https://78.media.tumblr.com/0ad9e012f210e6236605acbab67e0d02/tumblr_om5ka9jBQX1v91s98o1_500.gif");*/
+  background-repeat: no-repeat;
+}
+
+.grid5 {
   border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 5;
   background-color: #7BA714;
 }
-.twelve {
+.grid4 {
   border: 5px solid #254A11;
   grid-column: 1;
   grid-row: 6;
   background-color: #4FE863;
 }
-.thirteen {
+.grid3 {
   border: 5px solid #254A11;
   grid-column: 2;
   grid-row: 6;
   background-color: #4F9E24;
 }
-.forteen {
+.grid2 {
   border: 5px solid #254A11;
   grid-column: 3;
   grid-row: 6;
   background-color: #A48D4D;
 }
-.fifteen {
+.grid1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
   border: 5px solid #254A11;
+  color: #edd468;
   grid-column: 4;
   grid-row: 6;
-  background-color: #DCD364;
+  background: linear-gradient(to right, #158e02, #edd468);
 }
