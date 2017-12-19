@@ -41,7 +41,7 @@ body {
 }
 
 input[type=text] {
-    width: 70%;
+    width: 100%;
     padding: 12px 10px;
     margin: 8px 0;
     box-shadow: 5px 10px 18px black;
@@ -50,6 +50,7 @@ input[type=text] {
     background-color: #b0c61b;
     color: white;
     float: left;
+    font-style: italic;
 }
 
 .nobg {
@@ -57,10 +58,12 @@ input[type=text] {
 }
 .player-button {
   width: 20%;
-  float: left;
+  margin-left: 37%;
   text-align: center;
   background-color: #b0c61b;
   box-shadow: 5px 10px 18px black;
+  margin-bottom: 15px;
+  font-style: italic;
 }
 
 .start-button {
@@ -179,4 +182,108 @@ input[type=text] {
     -moz-transition-delay: 0s;
     -o-transition-delay: 0s;
     transition-delay: 0s;
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.one {
+  background-image: url("../img/jumanjihead.gif");
+  height: 200px;
+  border-radius: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-column: 1 / 5;
+  grid-row: 1;
+}
+.two {
+  border: 5px solid #254A11;
+  background-color: #4FE863;
+  grid-column: 1;
+  grid-row: 2;
+}
+.three {
+  border: 5px solid #254A11;
+  background-color: #4F9E24;
+  grid-column: 2;
+  grid-row: 2;
+}
+.four {
+  border: 5px solid #254A11;
+  grid-column: 3;
+  grid-row: 2;
+  background-color: #A48D4D;
+}
+.five {
+  border: 5px solid #254A11;
+  grid-column: 4;
+  grid-row: 2;
+  background-color: #DCD364;
+}
+.six {
+  border: 5px solid #254A11;
+  grid-column: 4;
+  grid-row: 3;
+  background-color: #7BA714;
+}
+.seven {
+  border: 5px solid #254A11;
+  grid-column: 4;
+  grid-row: 4;
+  background-color: #4FE863;
+}
+.eight {
+  border: 5px solid #254A11;
+  grid-column: 3;
+  grid-row: 4;
+  background-color: #4F9E24;
+}
+
+.nine {
+  border: 5px solid #254A11;
+  grid-column: 2;
+  grid-row: 4;
+  background-color: #A48D4D;
+}
+
+.ten {
+  border: 5px solid #254A11;
+  grid-column: 1;
+  grid-row: 4;
+  background-color: #DCD364;
+}
+.eleven {
+  border: 5px solid #254A11;
+  grid-column: 1;
+  grid-row: 5;
+  background-color: #7BA714;
+}
+.twelve {
+  border: 5px solid #254A11;
+  grid-column: 1;
+  grid-row: 6;
+  background-color: #4FE863;
+}
+.thirteen {
+  border: 5px solid #254A11;
+  grid-column: 2;
+  grid-row: 6;
+  background-color: #4F9E24;
+}
+.forteen {
+  border: 5px solid #254A11;
+  grid-column: 3;
+  grid-row: 6;
+  background-color: #A48D4D;
+}
+.fifteen {
+  border: 5px solid #254A11;
+  grid-column: 4;
+  grid-row: 6;
+  background-color: #DCD364;
 }
