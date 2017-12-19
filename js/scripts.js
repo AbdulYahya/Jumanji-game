@@ -43,7 +43,7 @@ function Space(spaceNumber, spaceBehavior){
 }
 function findSpaceByNumber(spacesOnBoard, spaceNumber){
   for (var i = 0; i < spacesOnBoard.length; i++) {
-    if (spacesOnBoard[i].spaceNumber === spaceNumber;) {
+    if (spacesOnBoard[i].spaceNumber === spaceNumber) {
       return spacesOnBoard[i];
     }
   }
@@ -200,9 +200,9 @@ $(function (){
   players.push(player4);
   player = player1;
   spacesNumber = 15;
-  for (var i = 0; i < spacesNumber; i++) {
-    array[i]
-  }
+  // for (var i = 0; i < spacesNumber; i++) {
+  //   array[i]
+  // }
 
   playerReadyRegistrationForms();
   $('.span-pg').click(function () {
