@@ -206,7 +206,8 @@ function playerReadyRegistrationForms () {
       $('#player4RegistrationForm').hide();
       playerReady($('#player4Ready'), playerFourUserName);
       pimg = "<img class='center-image' src='" + $('#playerFourImg').attr('src') + "'>";
-      player4 = new Player(playerFourUserName, pimg, ON_HOLD_STATUS, 4);
+      player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
+      console.log(players);
       players.push(player4);
       spacesOnBoard[0].spacePlayers.push(player4);
       $('#0').append(players[3].playerSimbol+" ");
@@ -219,8 +220,22 @@ var roll = function() {
 }
 
 // Document Ready Function
-$(function (){
+var roll = function() {
+  return Math.floor((Math.random() * 6) + 1);
+}
+
+//frontend
+$(function() {
   playerReadyRegistrationForms();
+  $('.span-pg').click(function () {
+    $('.gameboard').removeClass('hidden');
+    $('.span-pg').addClass('hidden');
+    $('.nobg').addClass('hidden');
+  });
+
+  // $("form.diceroll").submit(function(event) {
+  //   event.preventDefault();
+  // $("span#rollNumber").text(roll);
 
   // $("form.diceroll").submit(function(event) {
   //   event.preventDefault();
