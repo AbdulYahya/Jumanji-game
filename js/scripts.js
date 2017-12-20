@@ -30,10 +30,8 @@ function nextPlayer(){
     if(players[i].playerId === player.playerId && i !== players.length-1){
       return players[i+1];
     }
-    else {
-      return players[0];
-    }
   }
+  return players[0];
 }
 //Space constructor
 function Space(spaceNumber, spaceBehavior){
@@ -60,28 +58,31 @@ Space.prototype.removePlayer = function () {
       this.spacePlayers.push(playersTemp[i]);
     }
   }
-};
+}
 
 function playJumanji(){
   var extraTurnFlag = false;
   var skipTurnFlag = false;
-  var nextPlayer;
-  if(player.playerStatus !== ON_2_HOLD_STATUS){
-    var diceValue = throwDice();
-    var currentSpace = findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition);
-    currentSpace.removePlayer(player);
-    nextSpace =  findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition + diceValue);
-    if(nextSpace.spaceBehavior === NOT_BEHAVIOR){
-      player.playerCurrentPosition = nextSpace.spaceNumber;
-    }
-    else if (nextSpace.spaceBehavior === GO_BACK_TO_START_BEHAVIOR) {
+  var nextPlayerTurn;
+  if(player.playerStatus === ON_2_HOLD_STATUS){
+    player.playerStatus = ON_HOLD_STATUS;
+    player = nextPlayer();
+    player.playerStatus = READY_STATUS
+  }
+  var diceValue = throwDice();
+  alert(diceValue);
+  var currentSpace = findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition);
+  currentSpace.removePlayer(player);
+  nextSpace =  findSpaceByNumber(spacesOnBoard, (player.playerCurrentPosition + diceValue));
+  if (nextSpace.spaceNumber <= spacesNumber) {
+    if (nextSpace.spaceBehavior === GO_BACK_TO_START_BEHAVIOR) {
       nextSpace =  findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition - player.playerCurrentPosition);
     }
     else if (nextSpace.spaceBehavior === MOVE_UP_2_SPACES_BEHAVIOR) {
-      nextSpace =  findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition + 2);
+      nextSpace =  findSpaceByNumber(spacesOnBoard, nextSpace.spaceNumber + 2);
     }
     else if (nextSpace.spaceBehavior === GO_BACK_5_SPACES_BEHAVIOR) {
-      nextSpace =  findSpaceByNumber(spacesOnBoard, player.playerCurrentPosition -5);
+      nextSpace =  findSpaceByNumber(spacesOnBoard, nextSpace.spaceNumber -5);
       if(nextSpace < 0){
         nextSpace = 0;
       }
@@ -92,13 +93,8 @@ function playJumanji(){
     else if (nextSpace.spaceBehavior === SKIP_TURN_BEHAVIOR) {
       skipTurnFlag = true;
     }
+    player.playerCurrentPosition = nextSpace.spaceNumber;
     nextSpace.spacePlayers.push(player);
-    if(extraTurnFlag){
-      nextPlayer = player;
-    }
-    else {
-      nextPlayer = nextPlayer(player);
-    }
     if(skipTurnFlag){
       player.playerStatus = ON_2_HOLD_STATUS;
     }
@@ -106,14 +102,16 @@ function playJumanji(){
       player.playerStatus = ON_HOLD_STATUS;
     }
     nextPlayer.playerStatus = READY_STATUS;
+    nextPlayerTurn = nextPlayer();
+    if(extraTurnFlag){
+      nextPlayerTurn = player;
+    }
   }
   else {
-    nextPlayer = nextPlayer(player);
-    player.playerStatus = ON_HOLD_STATUS;
-    nextPlayer.playerStatus = READY_STATUS;
+    alert('hey '+player.playerName+' you are winner');
+    return player;
   }
-  return nextPlayer;
-
+  return nextPlayerTurn;
 }
 
 //
@@ -200,14 +198,47 @@ $(function (){
   players.push(player4);
   player = player1;
   spacesNumber = 15;
-  // for (var i = 0; i < spacesNumber; i++) {
-  //   array[i]
-  // }
-
-  playerReadyRegistrationForms();
-  $('.span-pg').click(function () {
-    $('.gameboard').removeClass('hidden');
-    $('.span-pg').addClass('hidden');
-    $('.nobg').addClass('hidden');
+  var space;
+  for (var i = 0; i < spacesNumber; i++) {
+    switch (i) {
+      case 2:
+        space = new Space(i, MOVE_UP_2_SPACES_BEHAVIOR);
+        break;
+      case 5:
+        space = new Space(i, EXTRA_TURN_BEHAVIOR);
+        break;
+      case 7:
+        space = new Space(i, GO_BACK_TO_START_BEHAVIOR);
+        break;
+      case 9:
+        space = new Space(i, SKIP_TURN_BEHAVIOR);
+        break;
+      case 13:
+        space = new Space(i, GO_BACK_5_SPACES_BEHAVIOR);
+        break;
+      default:
+        space = new Space(i, NOT_BEHAVIOR);
+    }
+    spacesOnBoard.push(space);
+  }
+  spacesOnBoard[0].spacePlayers.push(player1);
+  spacesOnBoard[0].spacePlayers.push(player2);
+  spacesOnBoard[0].spacePlayers.push(player3);
+  spacesOnBoard[0].spacePlayers.push(player4);
+  for (var i = 0; i < players.length; i++) {
+    $('#0').append(players[i].playerSimbol+" ")
+  }
+  $('#test').click(function(event){
+    event.preventDefault();
+    player = playJumanji();
+    //update board
+    for (var i = 0; i < spacesOnBoard.length; i++) {
+      $('#'+i).empty();
+      if(spacesOnBoard[i].spacePlayers.length > 0){
+        for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
+          $('#'+i).append(spacesOnBoard[i].spacePlayers[j].playerSimbol+" ");
+        }
+      }
+    }
   });
-});
+})
