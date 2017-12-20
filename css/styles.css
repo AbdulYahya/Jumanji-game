@@ -133,15 +133,7 @@ body {
   background-size: 100%;
   /*background-color: #5b663d;*/
   background-repeat: no-repeat;
-<<<<<<< HEAD
-<<<<<<< HEAD
   overflow-x: hidden;
-=======
-  /*overflow-x: hidden;*/
->>>>>>> 3aa40d789bd99353b99226c3aa7bf9a96420318f
-=======
-  /*overflow-x: hidden;*/
->>>>>>> 384cdc1589acb0afc05becaeea4c0a629404b2da
 }
 
 h4, .display-4 {
@@ -190,21 +182,15 @@ input[type=text] {
 
 .button {
     display: inline-block;
-<<<<<<< HEAD
-<<<<<<< HEAD
     /* position: relative; */
     margin-top: 1em;
     /* padding: 0.67em; */
-=======
     position: relative;
     margin-top: 1em;
     width: 100%;
->>>>>>> 3aa40d789bd99353b99226c3aa7bf9a96420318f
-=======
     position: relative;
     margin-top: 1em;
     width: 100%;
->>>>>>> 384cdc1589acb0afc05becaeea4c0a629404b2da
     border: 2px solid #FFF;
     /* overflow-y: hidden; */
     text-decoration: none;
