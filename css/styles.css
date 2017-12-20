@@ -187,7 +187,7 @@ input[type=text] {
 .gameboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
+  grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   transform:perspective(1000px) rotateX(45deg);
 }
@@ -209,75 +209,75 @@ input[type=text] {
   background-color: #4E6946;
   grid-column: 1;
   grid-row: 2;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid13 {
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 2;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid12 {
   background-color: #A48D4D;
   grid-column: 3;
   grid-row: 2;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid11 {
   background-color: #DCD364;
   grid-column: 4;
   grid-row: 2;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #DCD364;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid10 {
   background-color: #7BA714;
   grid-column: 4;
   grid-row: 3;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #7BA714;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid9 {
   background-color: #4E6946;
   grid-column: 4;
   grid-row: 4;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid8 {
   background-color: #4F9E24;
   grid-column: 3;
   grid-row: 4;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 
 .grid7 {
   background-color: #A48D4D;
   grid-column: 2;
   grid-row: 4;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 
 .grid6 {
   background-color: #DCD364;
   grid-column: 1;
   grid-row: 4;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #DCD364;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid5b {
   grid-column: 2 / 5;
@@ -289,44 +289,43 @@ input[type=text] {
   background-color: #7BA714;
   grid-column: 1;
   grid-row: 5;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #7BA714;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid4 {
   background-color: #4E6946;
   grid-column: 1;
   grid-row: 6;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid3 {
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 6;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid2 {
   background-color: #A48D4D;
   grid-column: 3;
   grid-row: 6;
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid1 {
   font-family: 'Bangers', cursive;
   text-align: center;
-  /*font-weight: bold;*/
   font-size: 50px;
-  color: #edd468;
+  color: #158e02;
   grid-column: 4;
   grid-row: 6;
-  background: linear-gradient(to right, #158e02, #edd468);
-  box-shadow: 0px 5px 10px rgb(0, 0, 0);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
-  border-radius: 20%;
+  background-color: #edd468;
+  box-shadow: 0px 5px 10px #edd468;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
