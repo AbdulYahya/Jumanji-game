@@ -226,3 +226,11 @@ img {
         grid-template-columns: repeat(auto-fill, 80px 160px);
         margin: auto;
     }
+
+.winner {
+  display: none;
+}
+
+.specialSpaces {
+  display: none;
+}
