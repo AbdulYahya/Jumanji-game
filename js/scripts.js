@@ -122,7 +122,7 @@ function playJumanji(){
 
 //
 //                USER INTERFACE
-// 'use strict';
+'use strict';
 //
 //
 // Capitalize function
@@ -158,7 +158,6 @@ function playerReadyRegistrationForms () {
       player = player1;
       spacesOnBoard[0].spacePlayers.push(player1);
       $('#0').append(players[0].playerSimbol+" ");
-
     }
   });
 
@@ -207,7 +206,7 @@ function playerReadyRegistrationForms () {
       playerReady($('#player4Ready'), playerFourUserName);
       pimg = "<img class='center-image' src='" + $('#playerFourImg').attr('src') + "'>";
       player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
-      console.log(players);
+      // console.log(players);
       players.push(player4);
       spacesOnBoard[0].spacePlayers.push(player4);
       $('#0').append(players[3].playerSimbol+" ");
