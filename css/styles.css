@@ -61,7 +61,7 @@
 }
 
 .nav-item a:hover {
-  color: #c74438;
+  color: rgba(188, 244, 66, 0.5);
 }
 
 /* Site Wrapper - Everything that isn't navigation */
@@ -71,6 +71,7 @@
   min-width: 100%;
   background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/jungle-1340466209nfD.jpg");
   position: relative;
+  background-repeat: no-repeat;
   top: 0;
   bottom: 100%;
   left: 0;
