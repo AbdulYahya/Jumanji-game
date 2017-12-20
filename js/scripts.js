@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const READY_STATUS = 'Ready';
 const ON_HOLD_STATUS = 'On Hold';
 
@@ -99,5 +100,21 @@ $(function () {
     $('.gameboard').removeClass('hidden');
     $('.span-pg').addClass('hidden');
     $('.nobg').addClass('hidden');
+=======
+// var Player function(turn){
+//   this.
+// }
+var roll = function() {
+  return Math.floor((Math.random() * 6) + 1);
+}
+
+//frontend
+$(function() {
+  $("form.diceroll").submit(function(event) {
+    event.preventDefault();
+// debugger;
+  $("span#rollNumber").text(roll);
+
+>>>>>>> 3aa40d789bd99353b99226c3aa7bf9a96420318f
   });
 });
