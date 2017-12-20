@@ -189,12 +189,13 @@ input[type=text] {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
+  transform:perspective(1000px) rotateX(45deg);
 }
 
 .grid15 {
   background-image: url("https://78.media.tumblr.com/68fde309fd597365544d377021ade3fd/tumblr_mqkr98FoOA1qfe31yo1_250.gif");
   height: 300px;
-  width: 580px;
+  width: 550px;
   border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -205,65 +206,82 @@ input[type=text] {
 }
 
 .grid14 {
-  background-color: #4FE863;
+  background-color: #4E6946;
   grid-column: 1;
   grid-row: 2;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid13 {
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 2;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid12 {
   background-color: #A48D4D;
   grid-column: 3;
   grid-row: 2;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid11 {
   background-color: #DCD364;
   grid-column: 4;
   grid-row: 2;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid10 {
   background-color: #7BA714;
   grid-column: 4;
   grid-row: 3;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid9 {
-  background-color: #4FE863;
+  background-color: #4E6946;
   grid-column: 4;
   grid-row: 4;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid8 {
   background-color: #4F9E24;
   grid-column: 3;
   grid-row: 4;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 
 .grid7 {
   background-color: #A48D4D;
   grid-column: 2;
   grid-row: 4;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 
 .grid6 {
   background-color: #DCD364;
   grid-column: 1;
   grid-row: 4;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid5b {
   grid-column: 2 / 5;
   grid-row: 5;
-  /*background-image: url("https://78.media.tumblr.com/0ad9e012f210e6236605acbab67e0d02/tumblr_om5ka9jBQX1v91s98o1_500.gif");*/
   background-repeat: no-repeat;
 }
 
@@ -271,25 +289,33 @@ input[type=text] {
   background-color: #7BA714;
   grid-column: 1;
   grid-row: 5;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid4 {
-  background-color: #4FE863;
+  background-color: #4E6946;
   grid-column: 1;
   grid-row: 6;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid3 {
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 6;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid2 {
   background-color: #A48D4D;
   grid-column: 3;
   grid-row: 6;
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
 .grid1 {
   font-family: 'Bangers', cursive;
@@ -300,5 +326,7 @@ input[type=text] {
   grid-column: 4;
   grid-row: 6;
   background: linear-gradient(to right, #158e02, #edd468);
-  box-shadow: 0px 1px 10px rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;
+  border-radius: 20%;
 }
