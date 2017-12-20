@@ -24,12 +24,119 @@
 .nav-color {
   color: #E3CF7F;
 }
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #7BA714;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 200px;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.dropdropdown-item {
+  color: black;
+}
+
+.nav-item a:hover {
+  color: #c74438;
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/jungle-1340466209nfD.jpg");
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+
+  /* non-critical apperance styles */
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+/* Additional non-critical styles */
+
+h1, h3, p {
+  max-width: 600px;
+  margin: 0 auto 1em;
+}
+
+code {
+    padding: 2px;
+    background: #ddd;
+}
+
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
 
 body {
-  background-image: url("../img/jungle.jpg");
-  background-size: cover;
+  background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/jungle-1340466209nfD.jpg");
+  background-size: 100%;
+  /*background-color: #5b663d;*/
   background-repeat: no-repeat;
+<<<<<<< HEAD
   overflow-x: hidden;
+=======
+  /*overflow-x: hidden;*/
+>>>>>>> 3aa40d789bd99353b99226c3aa7bf9a96420318f
 }
 
 h4, .display-4 {
@@ -83,17 +190,23 @@ input[type=text] {
 
 .button {
     display: inline-block;
+<<<<<<< HEAD
     /* position: relative; */
     margin-top: 1em;
     /* padding: 0.67em; */
+=======
+    position: relative;
+    margin-top: 1em;
+    width: 100%;
+>>>>>>> 3aa40d789bd99353b99226c3aa7bf9a96420318f
     border: 2px solid #FFF;
     /* overflow-y: hidden; */
     text-decoration: none;
-    font-size: 2em;
+    font-size: 3em;
     outline: none;
     color: #FFF;
     background: rgba(123, 167, 20, 0.7);
-    font-family: 'raleway', sans-serif;
+    font-family: 'Bangers', cursive;
 }
 
 .button span {
@@ -220,121 +333,194 @@ input[type=text] {
 .gameboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
+  grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  transform:perspective(1000px) rotateX(45deg);
 }
 .hidden {
   display: none;
 }
 .grid15 {
-  background-image: url("../img/jumanjihead.gif");
+  background-image: url("https://78.media.tumblr.com/68fde309fd597365544d377021ade3fd/tumblr_mqkr98FoOA1qfe31yo1_250.gif");
   height: 300px;
-  width: 580px;
+  width: 550px;
   border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   grid-column: 2 / 5;
   grid-row: 1;
+  box-shadow: 0px 0px 10px black;
 
 }
 
 .grid14 {
-  border: 5px solid #254A11;
-  background-color: #4FE863;
+  background-color: #4E6946;
   grid-column: 1;
   grid-row: 2;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid13 {
-  border: 5px solid #254A11;
   background-color: #4F9E24;
   grid-column: 2;
   grid-row: 2;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid12 {
-  border: 5px solid #254A11;
+  background-color: #A48D4D;
   grid-column: 3;
   grid-row: 2;
-  background-color: #A48D4D;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid11 {
-  border: 5px solid #254A11;
+  background-color: #DCD364;
   grid-column: 4;
   grid-row: 2;
-  background-color: #DCD364;
+  box-shadow: 0px 5px 10px #DCD364;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid10 {
-  border: 5px solid #254A11;
+  background-color: #7BA714;
   grid-column: 4;
   grid-row: 3;
-  background-color: #7BA714;
+  box-shadow: 0px 5px 10px #7BA714;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid9 {
-  border: 5px solid #254A11;
+  background-color: #4E6946;
   grid-column: 4;
   grid-row: 4;
-  background-color: #4FE863;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid8 {
-  border: 5px solid #254A11;
+  background-color: #4F9E24;
   grid-column: 3;
   grid-row: 4;
-  background-color: #4F9E24;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 
 .grid7 {
-  border: 5px solid #254A11;
+  background-color: #A48D4D;
   grid-column: 2;
   grid-row: 4;
-  background-color: #A48D4D;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 
 .grid6 {
-  border: 5px solid #254A11;
+  background-color: #DCD364;
   grid-column: 1;
   grid-row: 4;
-  background-color: #DCD364;
+  box-shadow: 0px 5px 10px #DCD364;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid5b {
   grid-column: 2 / 5;
   grid-row: 5;
-  /*background-image: url("https://78.media.tumblr.com/0ad9e012f210e6236605acbab67e0d02/tumblr_om5ka9jBQX1v91s98o1_500.gif");*/
   background-repeat: no-repeat;
 }
 
 .grid5 {
-  border: 5px solid #254A11;
+  background-color: #7BA714;
   grid-column: 1;
   grid-row: 5;
-  background-color: #7BA714;
+  box-shadow: 0px 5px 10px #7BA714;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid4 {
-  border: 5px solid #254A11;
+  background-color: #4E6946;
   grid-column: 1;
   grid-row: 6;
-  background-color: #4FE863;
+  box-shadow: 0px 5px 10px #4E6946;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid3 {
-  border: 5px solid #254A11;
+  background-color: #4F9E24;
   grid-column: 2;
   grid-row: 6;
-  background-color: #4F9E24;
+  box-shadow: 0px 5px 10px #4F9E24;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid2 {
-  border: 5px solid #254A11;
+  background-color: #A48D4D;
   grid-column: 3;
   grid-row: 6;
-  background-color: #A48D4D;
+  box-shadow: 0px 5px 10px #A48D4D;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
 }
 .grid1 {
+  font-family: 'Bangers', cursive;
   text-align: center;
-  font-weight: bold;
   font-size: 50px;
-  border: 5px solid #254A11;
-  color: #edd468;
+  color: #158e02;
   grid-column: 4;
   grid-row: 6;
-  background: linear-gradient(to right, #158e02, #edd468);
+  background-color: #edd468;
+  box-shadow: 0px 5px 10px #edd468;
+  /*box-shadow: 0px 1px 10px rgb(0, 0, 0) inset;*/
+  border-radius: 40%;
+}
+
+.dice {
+  float: left;
+  background-color: red;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 .playerReadyAnimation {

@@ -214,11 +214,18 @@ function playerReadyRegistrationForms () {
   });
 }
 
+var roll = function() {
+  return Math.floor((Math.random() * 6) + 1);
+}
 
 // Document Ready Function
 $(function (){
   playerReadyRegistrationForms();
-
+  $("form.diceroll").submit(function(event) {
+    event.preventDefault();
+    // debugger;
+    $("span#rollNumber").text(roll);
+  }
   spacesNumber = 14;
   var space;
 

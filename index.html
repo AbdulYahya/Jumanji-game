@@ -6,14 +6,25 @@
     <title>Jumanji</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Berkshire+Swash|Permanent+Marker" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-custom">
-      <a class="navbar-brand nav-color" href="#">Players</a>
+    <ul class="navigation">
+      <li class="nav-item"><a href="#">A GAME FOR THOSE WHO SEEK TO FIND</a></li>
+      <li class="nav-item"><a href="#">A WAY TO LEAVE THEIR WORLD BEHIND.</a></li>
+      <li class="nav-item"><a href="#">YOU WILL ROLL THE DICE TO MOVE YOUR TURN</a></li>
+    </ul>
+
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"></label>
+
+    <div class="site-wrap">
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+      <a class="navbar-brand nav-color" href="#">Rules</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,32 +33,28 @@
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player1name">Player 1</span><span class="caret"></span>
-            </a>
+              <span id="player1name">Player 1: </span><span class="caret"></span> </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player2name">Player 2</span><span class="caret"></span>
-            </a>
+              <span id="player2name">Player 2: </span><span class="caret"></span> </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player3name">Player 3</span><span class="caret"></span>
-            </a>
+              <span id="player3name">Player 3: </span><span class="caret"></span> </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Current Position: </a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span id="player4name">Player 4</span><span class="caret"></span>
-            </a>
+              <span id="player4name">Player 4: </span><span class="caret"></span> </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">Current Position: </a>
             </div>
@@ -146,6 +153,13 @@
         <div id="2" class="grid3"></div>
         <div id="1" class="grid2"></div>
         <div id="0" class="grid1"></div>
+      </div>
+    </div>
+    <div class="dice">
+      <div class="dicenumber">
+        <form class="diceroll" action="index.html" method="post">
+          <button type="submit" name="button">Roll</button><span id="rollNumber"></span>
+        </form>
       </div>
     </div>
   </body>
