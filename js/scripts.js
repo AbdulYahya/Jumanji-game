@@ -221,11 +221,12 @@ var roll = function() {
 // Document Ready Function
 $(function (){
   playerReadyRegistrationForms();
-  $("form.diceroll").submit(function(event) {
-    event.preventDefault();
-    // debugger;
-    $("span#rollNumber").text(roll);
-  }
+
+  // $("form.diceroll").submit(function(event) {
+  //   event.preventDefault();
+  //   // debugger;
+  //   $("span#rollNumber").text(roll);
+  // }
   spacesNumber = 14;
   var space;
 
