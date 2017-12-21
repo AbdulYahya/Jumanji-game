@@ -189,46 +189,40 @@ $(function(){
       playerReady('#playerReady'+idButton, Capitalize(playerName));
     }
   });
-
-  //     if (!playerOneUserName == "") {
-  //       $('#player1name').text(playerOneUserName);
-  //       $('#player1RegistrationForm').hide();
-  //       playerReady('#player1Ready', playerOneUserName);
-  //       pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
-  //       player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
-  //       players.push(player1);
-  //       player = player1;
-  //       spacesOnBoard[0].spacePlayers.push(player1);
-  //       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
-  //     }
-
   $('#playerRegistrationForm').submit(function(event){
     event.preventDefault();
     for (var i = 1; i <= PLAYERS_MAX_NUMBER; i++) {
       if ($('#playerName'+i).val() !== "") {
         var playerName = $('#playerName'+i).val();
-        var playerSimbol = $('#playerSimbol'+i).val();
-        var playerRegistration = new Player(playerName, playerSimbol, spacesOnBoard[0].spaceNumber, ON_HOLD_STATUS, i);
+        // var playerSymbol = $('#playerSymbol'+i).val();
+        var playerSymbol = "<img class='playerImg' src='" + $('#playerSymbol' + i).val() + "'>";
+        var playerRegistration = new Player(playerName, playerSymbol, spacesOnBoard[0].spaceNumber, ON_HOLD_STATUS, i);
         players.push(playerRegistration);
         spacesOnBoard[0].spacePlayers.push(playerRegistration);
         $('#'+spacesOnBoard[0].spaceNumber).find('.playerDeck').append('<div class="playerCard">' +playerRegistration.playerSimbol+" " + '</div>');
       }
     }
+    player = players[0];
     $('.gameboard').removeClass('hidden');
     $('.span-pg').addClass('hidden');
     $('.nobg').addClass('hidden');
-  })
+  });
   $('#test').click(function(event){
     event.preventDefault();
     var diceValue = throwDice();
     var nextSpaceNumber = playJumanji(diceValue);
-    makeBehavior(nextSpaceNumber);
-    //update board
-    for (var i = 0; i < spacesOnBoard.length; i++) {
-      $('#'+i).find('.playerDeck').empty();
-      if(spacesOnBoard[i].spacePlayers.length > 0){
-        for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
-          $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
+    if (nextSpaceNumber === -1) {
+      console.log('Winner');
+      $('#13').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
+    } else {
+      makeBehavior(nextSpaceNumber);
+      //update board
+      for (var i = 0; i < spacesOnBoard.length; i++) {
+        $('#'+i).find('.playerDeck').empty();
+        if(spacesOnBoard[i].spacePlayers.length > 0){
+          for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
+            $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
+          }
         }
       }
     }
