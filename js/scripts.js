@@ -180,10 +180,11 @@ $(function(){
   $('.registerButtons').click(function(event){
     event.preventDefault();
     var idButton = $(this).attr("id");
-    if ($('#playerName'+idButton).val() !== "") {
-      $('#playerNavName'+idButton).text($('#playerName'+idButton).val());
+    var playerName = $('#playerName'+idButton).val();
+    if (playerName !== "") {
+      $('#playerNavName'+idButton).text(playerName);
       $('#playerRegistration'+idButton).hide();
-      playerReady('#playerReady'+idButton, $('#playerName'+idButton).val());
+      playerReady('#playerReady'+idButton, playerName);
     }
   })
   $('#playerRegistrationForm').submit(function(event){
