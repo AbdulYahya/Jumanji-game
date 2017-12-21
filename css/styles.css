@@ -23,12 +23,6 @@
   width: 35%;
 }
 .playerImg {
-  /* box-shadow: 5px 10px 18px black;
-  border-radius: 50%;
-  width: 10%;
-  height: 10%;
-  margin-bottom: 10px;
-  border: 3px solid #7BA714; */
   border: 3px solid #7BA714;
   border-radius: 50%;
   box-shadow: 5px 10px 18px black;
@@ -37,7 +31,6 @@
 }
 
 .center-image {
-  /* margin-left: 30%; */
   box-shadow: 5px 10px 18px black;
   border-radius: 50%;
   width: 150px;
