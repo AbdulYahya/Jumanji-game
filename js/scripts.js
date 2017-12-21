@@ -152,12 +152,12 @@ function playerReadyRegistrationForms () {
       $('#player1name').text(playerOneUserName);
       $('#player1RegistrationForm').hide();
       playerReady('#player1Ready', playerOneUserName);
-      pimg = "<img class='center-image' src='" + $('#playerOneImg').attr('src') + "'>";
+      pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
       player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
       players.push(player1);
       player = player1;
       spacesOnBoard[0].spacePlayers.push(player1);
-      $('#0').append(players[0].playerSimbol+" ");
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
     }
   });
 
@@ -170,11 +170,11 @@ function playerReadyRegistrationForms () {
       $('#player2name').text(playerTwoUserName);
       $('#player2RegistrationForm').hide();
       playerReady('#player2Ready', playerTwoUserName);
-      pimg = "<img class='center-image' src='" + $('#playerTwoImg').attr('src') + "'>";
+      pimg = "<img class='playerImg' src='" + $('#playerTwoImg').attr('src') + "'>";
       player2 = new Player(playerTwoUserName, pimg, 0, ON_HOLD_STATUS, 2);
       players.push(player2);
       spacesOnBoard[0].spacePlayers.push(player2);
-      $('#0').append(players[1].playerSimbol+" ");
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[1].playerSimbol+" " + '</div>');
     }
   });
 
@@ -187,11 +187,11 @@ function playerReadyRegistrationForms () {
       $('#player3name').text(playerThreeUserName);
       $('#player3RegistrationForm').hide();
       playerReady('#player3Ready', playerThreeUserName);
-      pimg = "<img class='center-image' src='" + $('#playerThreeImg').attr('src') + "'>";
+      pimg = "<img class='playerImg' src='" + $('#playerThreeImg').attr('src') + "'>";
       player3 = new Player(playerThreeUserName, pimg, 0, ON_HOLD_STATUS, 3);
       players.push(player3);
       spacesOnBoard[0].spacePlayers.push(player3);
-      $('#0').append(players[2].playerSimbol+" ");
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[2].playerSimbol+" " + '</div>');
 
     }
   });
@@ -204,12 +204,12 @@ function playerReadyRegistrationForms () {
       $('#player4name').text(playerFourUserName);
       $('#player4RegistrationForm').hide();
       playerReady($('#player4Ready'), playerFourUserName);
-      pimg = "<img class='center-image' src='" + $('#playerFourImg').attr('src') + "'>";
+      pimg = "<img class='playerImg' src='" + $('#playerFourImg').attr('src') + "'>";
       player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
       // console.log(players);
       players.push(player4);
       spacesOnBoard[0].spacePlayers.push(player4);
-      $('#0').append(players[3].playerSimbol+" ");
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[3].playerSimbol+" " + '</div>');
     }
   });
 }
@@ -266,6 +266,9 @@ $(function() {
     }
     spacesOnBoard.push(space);
   }
+  for (var i = 0; i < spacesOnBoard.length; i++) {
+      $('#'+i).append('<div class="playerDeck"></div');
+  }
 
   for (var i = 0; i < players.length; i++) {
     $('#0').append(players[i].playerSimbol+" ")
@@ -276,10 +279,10 @@ $(function() {
     player = playJumanji();
     //update board
     for (var i = 0; i < spacesOnBoard.length; i++) {
-      $('#'+i).empty();
+      $('#'+i).find('.playerDeck').empty();
       if(spacesOnBoard[i].spacePlayers.length > 0){
         for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
-          $('#'+i).append(spacesOnBoard[i].spacePlayers[j].playerSimbol+" ");
+          $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
         }
       }
     }
