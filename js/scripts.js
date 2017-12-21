@@ -253,11 +253,11 @@ $(function(){
         setTimeout(function(){
           $('#test').toggle();
           updateBoard();
-          $('.moveUp2SpacesGif').removeClass('hidden');
-          $('.extraTurn').removeClass('hidden');
-          $('.goBack5Spaces').removeClass('hidden');
+          $('.moveUp2SpacesGif').addClass('hidden');
+          $('.extraTurn').addClass('hidden');
+          $('.goBack5Spaces').addClass('hidden');
           $('.winnerGif').addClass('hidden');
-          $('.skipTurn').removeClass('hidden');
+          $('.skipTurn').addClass('hidden');
         }, 5000);
 
         $('#test').toggle();
