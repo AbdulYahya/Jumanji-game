@@ -136,12 +136,7 @@ code {
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
 
 body {
-  background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/jungle-1340466209nfD.jpg");
-  background-size: cover;
-  /*background-color: #5b663d;*/
-  background-repeat: no-repeat;
-  /*overflow-x: hidden;*/
-  position: fixed;
+  position: fixed;*/
 }
 
 h4, .display-4 {
@@ -187,12 +182,8 @@ input[type=text] {
 .span-pg {
   width: 100%;
 }
-.start-button {
 
-}
-.start-button:hover {
-  /* back */
-}
+
 
 .button {
     display: inline-block;
@@ -200,13 +191,26 @@ input[type=text] {
     margin-top: 1em;
     width: 100%;
     border: 2px solid #FFF;
-    /* overflow-y: hidden; */
     text-decoration: none;
     font-size: 3em;
     outline: none;
     color: #FFF;
     background: rgba(123, 167, 20, 0.7);
     font-family: 'Bangers', cursive;
+}
+
+#playerTwoImg {
+  z-index: 2;
+
+}
+#playerTwoImg {
+  z-index: 3;
+}
+#playerTwoImg {
+  z-index: 4;
+}
+#playerTwoImg {
+  z-index: 5;
 }
 
 .button span {
@@ -234,8 +238,6 @@ input[type=text] {
     transition: .4s,opacity .6s;
 }
 
-/* :before */
-
 .button:before {
     content: attr(data-hover);
     -webkit-transform: translate(-150%,0);
@@ -244,8 +246,6 @@ input[type=text] {
     -o-transform: translate(-150%,0);
     transform: translate(-150%,0);
 }
-
-/* :after */
 
 .button:after {
     content: attr(data-active);
@@ -256,8 +256,6 @@ input[type=text] {
     transform: translate(150%,0);
 }
 
-/* Span on :hover and :active */
-
 .button:hover span,
 .button:active span {
     opacity: 0;
@@ -267,11 +265,6 @@ input[type=text] {
     -o-transform: scale(0.3);
     transform: scale(0.3);
 }
-
-/*
-    We show :before pseudo-element on :hover
-    and :after pseudo-element on :active
-*/
 
 .button:hover:before,
 .button:active:after {
@@ -286,10 +279,6 @@ input[type=text] {
     -o-transition-delay: .4s;
     transition-delay: .4s;
 }
-
-/*
-  We hide :before pseudo-element on :active
-*/
 
 .button:active:before {
     -webkit-transform: translate(-150%,0);
@@ -336,6 +325,8 @@ input[type=text] {
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   transform:perspective(1000px) rotateX(45deg);
+  width: 90%;
+  margin-left: 5%;
 }
 .hidden {
   display: none;
@@ -478,11 +469,6 @@ input[type=text] {
   border-radius: 40%;
 }
 
-.dice {
-  float: left;
-  background-color: red;
-}
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -589,6 +575,10 @@ h4, .display-4 {
 }
 
 #d1, #d2, #d3, #d4, #d5, #d6 {
+  height: 100px;
+  width: 100px;
+  float:right;
+  margin-right: 50px;
   display: none;
 }
 
@@ -603,29 +593,25 @@ h4, .display-4 {
   background-color: rgb(106, 130, 74)
 }
 
-.dice {
-  height: 100px;
-  width: 100px;
-}
-
 .diceimage {
   z-index: 3;
-  float: right;
+  /*float: right;*/
   position: fixed;
-  margin-left: 90%;
-  margin-top: 6%;
+  margin-top: 90px;
+  width: 100%;
 }
 
 .winner {
   margin: auto;
   width: 70%;
   padding: 10px;
-
-}
-
-img {
-  width: 1000px;
-  height: auto;
+  background-image: url("../img/youwin.gif");
+  background-size: 68%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  position: absolute;
 }
 
 .winner button {
@@ -640,33 +626,11 @@ img {
     color:#b5e5b5
 }
 
-.box {
-  background-color: #10601c !important;
-  color: #b5e5b5 !important;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 75%;
-  align-items: center;
-}
 
-.box:nth-child(even) {
-  background-color: #b5e5b5 !important;
-  color: #b5e5b5 !important;
-}
-
-    .wrapper {
-        display: grid;
-    /*border:1px solid #000;*/
-    grid-gap: 10px;
-        grid-template-columns: repeat(auto-fill, 80px 160px);
-        margin: auto;
-    }
-
-.winner {
+#extraTurn, #backToStart, #back5spaces, #up2spaces, #skipTurn {
+  width: 200px;
+  height: 150px;
+  float: right;
+  margin-right: 3px;
   display: none;
 }
-
-.specialSpaces {
-  display: none;
-  height: 250px;
-  width: 325px;
