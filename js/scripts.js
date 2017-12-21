@@ -233,19 +233,19 @@ $(function(){
         //debugger;
         switch (findSpaceByNumber(nextSpaceNumber).spaceBehavior) {
           case MOVE_UP_2_SPACES_BEHAVIOR:
-            $('.winnerGif').removeClass('hidden');
+            $('.moveUp2SpacesGif').removeClass('hidden');
             break;
           case EXTRA_TURN_BEHAVIOR:
-            $('.winnerGif').removeClass('hidden');
+            $('.extraTurn').removeClass('hidden');
             break;
           case GO_BACK_TO_START_BEHAVIOR:
-            $('.winnerGif').removeClass('hidden');
+            $('.goBack5Spaces').removeClass('hidden');
             break;
           case GO_BACK_5_SPACES_BEHAVIOR:
             $('.winnerGif').removeClass('hidden');
             break;
           case SKIP_TURN_BEHAVIOR:
-            $('.winnerGif').removeClass('hidden');
+            $('.skipTurn').removeClass('hidden');
             break;
           default:
 
@@ -253,11 +253,11 @@ $(function(){
         setTimeout(function(){
           $('#test').toggle();
           updateBoard();
+          $('.moveUp2SpacesGif').removeClass('hidden');
+          $('.extraTurn').removeClass('hidden');
+          $('.goBack5Spaces').removeClass('hidden');
           $('.winnerGif').addClass('hidden');
-          $('.winnerGif').addClass('hidden');
-          $('.winnerGif').addClass('hidden');
-          $('.winnerGif').addClass('hidden');
-          $('.winnerGif').addClass('hidden');
+          $('.skipTurn').removeClass('hidden');
         }, 5000);
 
         $('#test').toggle();
