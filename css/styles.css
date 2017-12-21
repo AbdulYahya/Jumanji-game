@@ -93,7 +93,7 @@ body {
 }
 
 /* Site Wrapper - Everything that isn't navigation */
-.site-wrap {
+.ap {
   /* Critical position and size styles */
   min-height: 100%;
   min-width: 100%;
@@ -161,12 +161,8 @@ body {
   background-size: cover;
   /*background-color: #5b663d;*/
   background-repeat: no-repeat;
-<<<<<<< HEAD
-  /*overflow-x: hidden;*/
   position: fixed;
-=======
   overflow-x: hidden;
->>>>>>> ay-frontend
 }
 
 h4, .display-4 {
