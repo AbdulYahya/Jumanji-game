@@ -147,6 +147,16 @@ function playerReady (playerReadyDivId, playerName) {
                            '</div>' +
                          '</div>');
 }
+function updateBoard(){
+  for (var i = 0; i < spacesOnBoard.length; i++) {
+    $('#'+i).find('.playerDeck').empty();
+    if(spacesOnBoard[i].spacePlayers.length > 0){
+      for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
+        $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
+      }
+    }
+  }
+}
 $(function(){
   spacesNumber = 15;
   var space;
@@ -205,22 +215,19 @@ $(function(){
   $('#test').click(function(event){
     event.preventDefault();
     var diceValue = throwDice();
-    var nextSpaceNumber = playJumanji(diceValue);
+    var nextSpaceNumber = playJumanji(13);
     if (nextSpaceNumber === -1) {
       console.log('Winner');
       $('#14').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
-      $()
+
     } else {
+      updateBoard();
       makeBehavior(nextSpaceNumber);
-      //update board
-      for (var i = 0; i < spacesOnBoard.length; i++) {
-        $('#'+i).find('.playerDeck').empty();
-        if(spacesOnBoard[i].spacePlayers.length > 0){
-          for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
-            $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
-          }
-        }
-      }
+      setTimeout(function(){
+        console.log('waiting 5 secs...');
+        updateBoard();
+    }, 5000);
+
     }
   });
 });
