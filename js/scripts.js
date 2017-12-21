@@ -143,6 +143,7 @@ function splitId(id) {
 function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
 // Player Ready Animation
 function playerReady (playerReadyDivId, playerName) {
+  $(playerReadyDivId).removeClass('hidden');
   $(playerReadyDivId).html('<div class="card border-success playerReadyAnimation">' +
                            '<div class="text-success">' +
                              '<h4 class="display-4 mb-0">Player ' +
@@ -180,16 +181,27 @@ $(function(){
   }
   $('.registerButtons').click(function(event){
     event.preventDefault();
-
     var idButton = splitId($(this).attr("id"));
-    // console.log(idButton);
     var playerName = $('#playerName'+idButton).val();
     if (playerName !== "") {
-      $('#playerNavName'+idButton).text(playerName);
+      $('#playerNavName'+idButton).text(Capitalize(playerName));
       $('#playerRegistration'+idButton).hide();
-      playerReady('#playerReady'+idButton, playerName);
+      playerReady('#playerReady'+idButton, Capitalize(playerName));
     }
-  })
+  });
+
+  //     if (!playerOneUserName == "") {
+  //       $('#player1name').text(playerOneUserName);
+  //       $('#player1RegistrationForm').hide();
+  //       playerReady('#player1Ready', playerOneUserName);
+  //       pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
+  //       player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
+  //       players.push(player1);
+  //       player = player1;
+  //       spacesOnBoard[0].spacePlayers.push(player1);
+  //       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
+  //     }
+
   $('#playerRegistrationForm').submit(function(event){
     event.preventDefault();
     for (var i = 1; i <= PLAYERS_MAX_NUMBER; i++) {
