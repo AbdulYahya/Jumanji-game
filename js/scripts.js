@@ -148,7 +148,7 @@ function playerReady (playerReadyDivId, playerName) {
                          '</div>');
 }
 $(function(){
-  spacesNumber = 14;
+  spacesNumber = 15;
   var space;
   for (var i = 0; i < spacesNumber; i++) {
     switch (i) {
@@ -172,7 +172,7 @@ $(function(){
     }
     spacesOnBoard.push(space);
   }
-  for (var i = 0; i < spacesOnBoard.length; i++) {
+  for (var i = 0; i <= spacesOnBoard.length; i++) {
       $('#'+i).append('<div class="playerDeck"></div');
   }
   $('.registerButtons').click(function(event){
@@ -208,7 +208,8 @@ $(function(){
     var nextSpaceNumber = playJumanji(diceValue);
     if (nextSpaceNumber === -1) {
       console.log('Winner');
-      $('#13').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
+      $('#14').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
+      $()
     } else {
       makeBehavior(nextSpaceNumber);
       //update board
