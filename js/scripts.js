@@ -1,5 +1,4 @@
 //Constants
-const READY_STATUS = 'Ready';
 const ON_HOLD_STATUS = 'On hold';
 const ON_2_HOLD_STATUS = 'On 2 hold';
 const SKIP_TURN_BEHAVIOR = 'Skip turn';
