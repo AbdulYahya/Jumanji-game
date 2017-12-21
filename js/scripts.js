@@ -130,14 +130,130 @@ function playJumanji(diceValue){
   return player.playerCurrentPosition;
 }
 
+//
+//                USER INTERFACE
+'use strict';
+//
+//
+// Capitalize function
+function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
+// Player Ready Animation
+function playerReady (playerReadyDivId, playerName) {
+  $(playerReadyDivId).html('<div class="card border-success playerReadyAnimation">' +
+                           '<div class="text-success">' +
+                             '<h4 class="display-4 mb-0">Player ' +
+                              playerName + ' is ready!</h4>' +
+                           '</div>' +
+                         '</div>');
+}
+// Grab info from playerRegistrationForm
+function playerReadyRegistrationForms () {
+  var playerOneRegistrationForm = document.getElementById('player1RegistrationForm');
+  var playerTwoRegistrationForm = document.getElementById('player2RegistrationForm');
+  var playerThreeRegistrationForm = document.getElementById('player3RegistrationForm');
+  var playerFourRegistrationForm = document.getElementById('player4RegistrationForm');
+
+  playerOneRegistrationForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var playerOneUserName = Capitalize($('#player1').val());
+
+    if (!playerOneUserName == "") {
+      $('#player1name').text(playerOneUserName);
+      $('#player1RegistrationForm').hide();
+      playerReady('#player1Ready', playerOneUserName);
+      pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
+      player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
+      players.push(player1);
+      player = player1;
+      spacesOnBoard[0].spacePlayers.push(player1);
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
+    }
+  });
+
+  playerTwoRegistrationForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var playerTwoUserName = Capitalize($('#player2').val());
+
+    if (!playerTwoUserName == "") {
+      $('#player2name').text(playerTwoUserName);
+      $('#player2RegistrationForm').hide();
+      playerReady('#player2Ready', playerTwoUserName);
+      pimg = "<img class='playerImg' src='" + $('#playerTwoImg').attr('src') + "'>";
+      player2 = new Player(playerTwoUserName, pimg, 0, ON_HOLD_STATUS, 2);
+      players.push(player2);
+      spacesOnBoard[0].spacePlayers.push(player2);
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[1].playerSimbol+" " + '</div>');
+    }
+  });
+
+  playerThreeRegistrationForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var playerThreeUserName = Capitalize($('#player3').val());
+
+    if (!playerThreeUserName == "") {
+      $('#player3name').text(playerThreeUserName);
+      $('#player3RegistrationForm').hide();
+      playerReady('#player3Ready', playerThreeUserName);
+      pimg = "<img class='playerImg' src='" + $('#playerThreeImg').attr('src') + "'>";
+      player3 = new Player(playerThreeUserName, pimg, 0, ON_HOLD_STATUS, 3);
+      players.push(player3);
+      spacesOnBoard[0].spacePlayers.push(player3);
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[2].playerSimbol+" " + '</div>');
+
+    }
+  });
+
+  playerFourRegistrationForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var playerFourUserName = Capitalize($('#player4').val());
+    if (!playerFourUserName == "") {
+      $('#player4name').text(playerFourUserName);
+      $('#player4RegistrationForm').hide();
+      playerReady($('#player4Ready'), playerFourUserName);
+      pimg = "<img class='playerImg' src='" + $('#playerFourImg').attr('src') + "'>";
+      player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
+      // console.log(players);
+      players.push(player4);
+      spacesOnBoard[0].spacePlayers.push(player4);
+      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[3].playerSimbol+" " + '</div>');
+    }
+  });
+}
+
+// Document Ready Function
+var roll = function() {
+  return Math.floor((Math.random() * 6) + 1);
+}
+
 $(function(){
-  player1 = new Player("player1", "simbol1", 0, READY_STATUS, 1);
-  player2 = new Player("player2", "simbol2", 0, ON_HOLD_STATUS, 2);
-  player3 = new Player("player3", "simbol3", 0, ON_HOLD_STATUS, 3);
-  players.push(player1);
-  players.push(player2);
-  players.push(player3);
-  player = player1;
+  // player1 = new Player("player1", "simbol1", 0, READY_STATUS, 1);
+  // player2 = new Player("player2", "simbol2", 0, ON_HOLD_STATUS, 2);
+  // player3 = new Player("player3", "simbol3", 0, ON_HOLD_STATUS, 3);
+  // players.push(player1);
+  // players.push(player2);
+  // players.push(player3);
+  // player = player1;
+  // $("form.diceroll").submit(function(event) {
+  //   event.preventDefault();
+  // $("span#rollNumber").text(roll);
+
+  // $("form.diceroll").submit(function(event) {
+  //   event.preventDefault();
+  //   // debugger;
+  //   $("span#rollNumber").text(roll);
+  // }
+
+  playerReadyRegistrationForms();
+  $('.span-pg').click(function () {
+    $('.gameboard').removeClass('hidden');
+    $('.span-pg').addClass('hidden');
+    $('.nobg').addClass('hidden');
+  });
+
   spacesNumber = 14;
   var space;
 
@@ -163,12 +279,13 @@ $(function(){
     }
     spacesOnBoard.push(space);
   }
-  spacesOnBoard[0].spacePlayers.push(player1);
-  spacesOnBoard[0].spacePlayers.push(player2);
-  spacesOnBoard[0].spacePlayers.push(player3);
-  for (var i = 0; i < players.length; i++) {
-    $('#0').append(players[i].playerSimbol+" ")
+  for (var i = 0; i < spacesOnBoard.length; i++) {
+      $('#'+i).append('<div class="playerDeck"></div');
   }
+
+  // for (var i = 0; i < players.length; i++) {
+  //   $('#0').append(players[i].playerSimbol+" ")
+  // }
 
   $('#test').click(function(event){
     event.preventDefault();
@@ -177,10 +294,10 @@ $(function(){
     makeBehavior(nextSpaceNumber);
     //update board
     for (var i = 0; i < spacesOnBoard.length; i++) {
-      $('#'+i).empty();
+      $('#'+i).find('.playerDeck').empty();
       if(spacesOnBoard[i].spacePlayers.length > 0){
         for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
-          $('#'+i).append(spacesOnBoard[i].spacePlayers[j].playerSimbol+" ");
+          $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
         }
       }
     }
