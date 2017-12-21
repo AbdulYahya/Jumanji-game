@@ -143,8 +143,6 @@ function splitId(id) {
 function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
 // Player Ready Animation
 function playerReady (playerReadyDivId, playerName) {
-  console.log(playerName);
-  $(playerReadyDivId).removeClass('hidden');
   $(playerReadyDivId).html('<div class="card border-success playerReadyAnimation">' +
                            '<div class="text-success">' +
                              '<h4 class="display-4 mb-0">Player ' +
