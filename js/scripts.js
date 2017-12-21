@@ -140,6 +140,8 @@ function playJumanji(diceValue){
 function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
 // Player Ready Animation
 function playerReady (playerReadyDivId, playerName) {
+  console.log(playerName);
+  $(playerReadyDivId).removeClass('hidden');
   $(playerReadyDivId).html('<div class="card border-success playerReadyAnimation">' +
                            '<div class="text-success">' +
                              '<h4 class="display-4 mb-0">Player ' +
@@ -148,80 +150,80 @@ function playerReady (playerReadyDivId, playerName) {
                          '</div>');
 }
 // Grab info from playerRegistrationForm
-function playerReadyRegistrationForms () {
-  var playerOneRegistrationForm = document.getElementById('player1RegistrationForm');
-  var playerTwoRegistrationForm = document.getElementById('player2RegistrationForm');
-  var playerThreeRegistrationForm = document.getElementById('player3RegistrationForm');
-  var playerFourRegistrationForm = document.getElementById('player4RegistrationForm');
-
-  playerOneRegistrationForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var playerOneUserName = Capitalize($('#player1').val());
-
-    if (!playerOneUserName == "") {
-      $('#player1name').text(playerOneUserName);
-      $('#player1RegistrationForm').hide();
-      playerReady('#player1Ready', playerOneUserName);
-      pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
-      player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
-      players.push(player1);
-      player = player1;
-      spacesOnBoard[0].spacePlayers.push(player1);
-      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
-    }
-  });
-
-  playerTwoRegistrationForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var playerTwoUserName = Capitalize($('#player2').val());
-
-    if (!playerTwoUserName == "") {
-      $('#player2name').text(playerTwoUserName);
-      $('#player2RegistrationForm').hide();
-      playerReady('#player2Ready', playerTwoUserName);
-      pimg = "<img class='playerImg' src='" + $('#playerTwoImg').attr('src') + "'>";
-      player2 = new Player(playerTwoUserName, pimg, 0, ON_HOLD_STATUS, 2);
-      players.push(player2);
-      spacesOnBoard[0].spacePlayers.push(player2);
-      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[1].playerSimbol+" " + '</div>');
-    }
-  });
-
-  playerThreeRegistrationForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var playerThreeUserName = Capitalize($('#player3').val());
-
-    if (!playerThreeUserName == "") {
-      $('#player3name').text(playerThreeUserName);
-      $('#player3RegistrationForm').hide();
-      playerReady('#player3Ready', playerThreeUserName);
-      pimg = "<img class='playerImg' src='" + $('#playerThreeImg').attr('src') + "'>";
-      player3 = new Player(playerThreeUserName, pimg, 0, ON_HOLD_STATUS, 3);
-      players.push(player3);
-      spacesOnBoard[0].spacePlayers.push(player3);
-      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[2].playerSimbol+" " + '</div>');
-    }
-  });
-
-  playerFourRegistrationForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var playerFourUserName = Capitalize($('#player4').val());
-    if (!playerFourUserName == "") {
-      $('#player4name').text(playerFourUserName);
-      $('#player4RegistrationForm').hide();
-      playerReady($('#player4Ready'), playerFourUserName);
-      pimg = "<img class='playerImg' src='" + $('#playerFourImg').attr('src') + "'>";
-      player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
-      players.push(player4);
-      spacesOnBoard[0].spacePlayers.push(player4);
-      $('#0').find('.playerDeck').append('<div class="playerCard">' + players[3].playerSimbol+" " + '</div>');
-    }
-  });
-}
+// function playerReadyRegistrationForms () {
+//   var playerOneRegistrationForm = document.getElementById('player1RegistrationForm');
+//   var playerTwoRegistrationForm = document.getElementById('player2RegistrationForm');
+//   var playerThreeRegistrationForm = document.getElementById('player3RegistrationForm');
+//   var playerFourRegistrationForm = document.getElementById('player4RegistrationForm');
+//
+//   playerOneRegistrationForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     var playerOneUserName = Capitalize($('#player1').val());
+//
+//     if (!playerOneUserName == "") {
+//       $('#player1name').text(playerOneUserName);
+//       $('#player1RegistrationForm').hide();
+//       playerReady('#player1Ready', playerOneUserName);
+//       pimg = "<img class='playerImg' src='" + $('#playerOneImg').attr('src') + "'>";
+//       player1 = new Player(playerOneUserName, pimg, 0, READY_STATUS, 1);
+//       players.push(player1);
+//       player = player1;
+//       spacesOnBoard[0].spacePlayers.push(player1);
+//       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
+//     }
+//   });
+//
+//   playerTwoRegistrationForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     var playerTwoUserName = Capitalize($('#player2').val());
+//
+//     if (!playerTwoUserName == "") {
+//       $('#player2name').text(playerTwoUserName);
+//       $('#player2RegistrationForm').hide();
+//       playerReady('#player2Ready', playerTwoUserName);
+//       pimg = "<img class='playerImg' src='" + $('#playerTwoImg').attr('src') + "'>";
+//       player2 = new Player(playerTwoUserName, pimg, 0, ON_HOLD_STATUS, 2);
+//       players.push(player2);
+//       spacesOnBoard[0].spacePlayers.push(player2);
+//       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[1].playerSimbol+" " + '</div>');
+//     }
+//   });
+//
+//   playerThreeRegistrationForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     var playerThreeUserName = Capitalize($('#player3').val());
+//
+//     if (!playerThreeUserName == "") {
+//       $('#player3name').text(playerThreeUserName);
+//       $('#player3RegistrationForm').hide();
+//       playerReady('#player3Ready', playerThreeUserName);
+//       pimg = "<img class='playerImg' src='" + $('#playerThreeImg').attr('src') + "'>";
+//       player3 = new Player(playerThreeUserName, pimg, 0, ON_HOLD_STATUS, 3);
+//       players.push(player3);
+//       spacesOnBoard[0].spacePlayers.push(player3);
+//       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[2].playerSimbol+" " + '</div>');
+//     }
+//   });
+//
+//   playerFourRegistrationForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     var playerFourUserName = Capitalize($('#player4').val());
+//     if (!playerFourUserName == "") {
+//       $('#player4name').text(playerFourUserName);
+//       $('#player4RegistrationForm').hide();
+//       playerReady($('#player4Ready'), playerFourUserName);
+//       pimg = "<img class='playerImg' src='" + $('#playerFourImg').attr('src') + "'>";
+//       player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
+//       players.push(player4);
+//       spacesOnBoard[0].spacePlayers.push(player4);
+//       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[3].playerSimbol+" " + '</div>');
+//     }
+//   });
+// }
 
 // Document Ready Function
 var roll = function() {
@@ -246,12 +248,38 @@ $(function(){
   //   $("span#rollNumber").text(roll);
   // }
 
-  playerReadyRegistrationForms();
-  $('.span-pg').click(function () {
-    $('.gameboard').removeClass('hidden');
-    $('.span-pg').addClass('hidden');
-    $('.nobg').addClass('hidden');
-  });
+  // playerReadyRegistrationForms();
+  // $('.span-pg').click(function () {
+  //   $('.gameboard').removeClass('hidden');
+  //   $('.span-pg').addClass('hidden');
+  //   $('.nobg').addClass('hidden');
+  // });
+
+    $('#playerRegistrationForm').submit(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var userName1 = Capitalize($('#playerName1').val());
+      var playerTwoUserName = Capitalize($('#playerName2').val());
+
+      for (var i = 0; i <= 4; i++) {
+        if ($('#playerName' + i).val() !== "") {
+
+          $('#playerNavName' + i).text($('#playerName' + i).val());
+          $('#playerRegistration' + i).hide();
+          playerReady($('#playerReady' + i), $('#playerName' + i).val());
+        }
+      }
+      // if (!playerOneUserName == "") {
+      //   $('#playerName1').text(playerOneUserName);
+      //   $('#playerRegistration1').hide();
+      //   playerReady($('#playerReady1'), playerOneUserName);
+      //   pimg = "<img class='playerImg' src='" + $('#playerSymbol1').val() + "'>";
+      //   player1 = new Player(playerOneUserName, pimg, 0, ON_HOLD_STATUS, 1);
+      //   players.push(player1);
+      //   spacesOnBoard[0].spacePlayers.push(player1);
+      //   $('#0').find('.playerDeck').append('<div class="playerCard">' + players[0].playerSimbol+" " + '</div>');
+      // }
+    });
 
   spacesNumber = 14;
   var space;
