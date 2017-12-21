@@ -588,10 +588,30 @@ h4, .display-4 {
   transform:perspective(200px) rotateY(45deg);
 }
 
+#d1, #d2, #d3, #d4, #d5, #d6 {
+  display: none;
+}
+
 #test {
   height: 67px;
   width: 200px;
   border-left: 30 solid white;
   z-index: 2;
   float: right;
+  color: white;
+  background-size: cover;
+  background-color: rgb(106, 130, 74)
+}
+
+.dice {
+  height: 100px;
+  width: 100px;
+}
+
+.diceimage {
+  z-index: 3;
+  float: right;
+  position: fixed;
+  margin-left: 90%;
+  margin-top: 6%;
 }
