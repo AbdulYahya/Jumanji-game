@@ -615,3 +615,58 @@ h4, .display-4 {
   margin-left: 90%;
   margin-top: 6%;
 }
+
+.winner {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+
+}
+
+img {
+  width: 1000px;
+  height: auto;
+}
+
+.winner button {
+  margin:1em;
+    border:none;
+    padding:0.25em 3em 0.25em 1em;
+    text-align:left;
+    background:
+      linear-gradient(-120deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) top no-repeat,
+      linear-gradient(300deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) bottom no-repeat ;
+    background-size: 100% 50%;
+    color:#b5e5b5
+}
+
+.box {
+  background-color: #10601c !important;
+  color: #b5e5b5 !important;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 75%;
+  align-items: center;
+}
+
+.box:nth-child(even) {
+  background-color: #b5e5b5 !important;
+  color: #b5e5b5 !important;
+}
+
+    .wrapper {
+        display: grid;
+    /*border:1px solid #000;*/
+    grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, 80px 160px);
+        margin: auto;
+    }
+
+.winner {
+  display: none;
+}
+
+.specialSpaces {
+  display: none;
+  height: 250px;
+  width: 325px;
