@@ -239,10 +239,10 @@ $(function(){
             $('.extraTurn').removeClass('hidden');
             break;
           case GO_BACK_TO_START_BEHAVIOR:
-            $('.goBack5Spaces').removeClass('hidden');
+            $('.backTostart').removeClass('hidden');
             break;
           case GO_BACK_5_SPACES_BEHAVIOR:
-            $('.winnerGif').removeClass('hidden');
+            $('.goBack5Spaces').removeClass('hidden');
             break;
           case SKIP_TURN_BEHAVIOR:
             $('.skipTurn').removeClass('hidden');
@@ -258,6 +258,8 @@ $(function(){
           $('.goBack5Spaces').addClass('hidden');
           $('.winnerGif').addClass('hidden');
           $('.skipTurn').addClass('hidden');
+          $('.backTostart').addClass('hidden');
+
         }, 5000);
 
         $('#test').toggle();
