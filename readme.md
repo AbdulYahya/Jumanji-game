@@ -30,21 +30,15 @@ Players may choose a character, enter their name below the avatar, and click _Re
 
 ## Specifications
 
-Game can accept a maximum of 4 players, user can input name
+| Behavior        | Input           | Outcome  |
+| ------------- |:-------------:| -----:|
+| Up to 4 players input names, and click _ready!_ button | Player 1: Olivia / Player 2: Matt / Click _Play!_ | Goes to game board |
+| Player 1 clicks _Roll_ button | Click _Roll_ button | Dice rolls and number is generated
+| Player 1 token moves to same space number as dice roll | Roll = 1 | Token to space 1 / New position on space 1 / Player 2 begins |
+| Repeat for Player 2, Player 3, and Player 4 | Roll = 3 | Token to space 3 / New position on space 3 / Next player begins |
+| Designated spaces alter gameplay. If a player lands on a special space, board moves vary | Player 1 lands on "Back to Start" | Player 1 token moved back to start position |
+| Player reaches last space on board| Board position 15| Game ends|
 
-Cycles through players in sequential order (1-4) and assigns dice rolls
-
-Executes a random dice roll for each players turn
-
-Assigns space on game board to present player in accordance to number rolled on dice. (ex: dice roll = 3 / player is moved 3 spaces on board)
-
-Player is kept on assigned space between turns
-
-Game executes varied gameplay rules assigned to specific spaces on board. (ex: Extra Turn, Go Back to Start)
-
-Normal gameplay is altered by rules assigned to specific spaces if player's roll adds to, and takes player to theses designated positions. (ex: If space assigned "Go Back 5 Spaces" /  5 spaces deduct from current position and player token relocates accordingly)
-
-Game ends when a player reaches the final board space
 
 
 
