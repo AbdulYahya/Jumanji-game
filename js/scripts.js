@@ -134,11 +134,7 @@ function splitId(id) {
   var id = id.toString();
   return id[id.length-1];
 }
-//
-//                USER INTERFACE
 'use strict';
-//
-//
 // Capitalize function
 function Capitalize (string) { return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase(); }
 // Player Ready Animation
@@ -194,7 +190,6 @@ $(function(){
     for (var i = 1; i <= PLAYERS_MAX_NUMBER; i++) {
       if ($('#playerName'+i).val() !== "") {
         var playerName = $('#playerName'+i).val();
-        // var playerSymbol = $('#playerSymbol'+i).val();
         var playerSymbol = "<img class='playerImg' src='" + $('#playerSymbol' + i).val() + "'>";
         var playerRegistration = new Player(playerName, playerSymbol, spacesOnBoard[0].spaceNumber, ON_HOLD_STATUS, i);
         players.push(playerRegistration);
