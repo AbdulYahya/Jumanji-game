@@ -130,7 +130,10 @@ function playJumanji(diceValue){
   }
   return player.playerCurrentPosition;
 }
-
+function splitId(id) {
+  var id = id.toString();
+  return id[id.length-1];
+}
 //
 //                USER INTERFACE
 'use strict';
@@ -179,7 +182,9 @@ $(function(){
   }
   $('.registerButtons').click(function(event){
     event.preventDefault();
-    var idButton = $(this).attr("id");
+
+    var idButton = splitId($(this).attr("id"));
+    // console.log(idButton);
     var playerName = $('#playerName'+idButton).val();
     if (playerName !== "") {
       $('#playerNavName'+idButton).text(playerName);
