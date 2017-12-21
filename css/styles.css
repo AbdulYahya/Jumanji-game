@@ -9,6 +9,9 @@
 .bg-custom {
   background-color: #7BA714;
   color: #E3CF7F;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .center-image {
@@ -19,6 +22,10 @@
   height: 150px;
   margin-bottom: 10px;
   border: 3px solid #7BA714;
+}
+.navbar-nav {
+  text-align: center;
+  width: 100%;
 }
 
 .nav-color {
@@ -92,8 +99,8 @@ label[for="nav-trigger"] {
   z-index: 2;
 
   /* non-critical apperance styles */
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
   background-size: contain;
 }
@@ -130,10 +137,11 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 
 body {
   background-image: url("http://www.publicdomainpictures.net/pictures/30000/velka/jungle-1340466209nfD.jpg");
-  background-size: 100%;
+  background-size: cover;
   /*background-color: #5b663d;*/
   background-repeat: no-repeat;
   /*overflow-x: hidden;*/
+  position: fixed;
 }
 
 h4, .display-4 {
@@ -159,6 +167,12 @@ input[type=text] {
     font-style: italic;
 }
 
+
+.card {
+  border-top: 75px solid rgba(0, 0, 0, 0);
+  border-left: 0 solid rgba(0, 0, 0, 0);
+  border-right: 0 solid rgba(0, 0, 0, 0);
+}
 .nobg {
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -337,7 +351,6 @@ input[type=text] {
   grid-column: 2 / 5;
   grid-row: 1;
   box-shadow: 0px 0px 10px black;
-
 }
 
 .grid14 {
@@ -538,4 +551,47 @@ input[type=text] {
 
 h4, .display-4 {
   font-size: 1.5rem;
+}
+
+.first {
+  position:absolute;
+  z-index: 1;
+  box-shadow: 0px 5px 10px black;
+  border-radius: 50%;
+  transform:perspective(200px) rotateY(45deg);
+}
+
+.second {
+  position:absolute;
+  left: 40px;
+  z-index: 2;
+  box-shadow: 0px 5px 10px black;
+  border-radius: 50%;
+  transform:perspective(200px) rotateY(45deg);
+}
+
+.third {
+  position:absolute;
+  left: 80px;
+  z-index: 3;
+  box-shadow: 0px 5px 10px black;
+  border-radius: 50%;
+  transform:perspective(200px) rotateY(45deg);
+}
+
+.forth {
+  position:absolute;
+  left: 120px;
+  z-index: 4;
+  box-shadow: 0px 5px 10px black;
+  border-radius: 50%;
+  transform:perspective(200px) rotateY(45deg);
+}
+
+#test {
+  height: 67px;
+  width: 200px;
+  border-left: 30 solid white;
+  z-index: 2;
+  float: right;
 }
