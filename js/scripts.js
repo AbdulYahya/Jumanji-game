@@ -147,6 +147,16 @@ function playerReady (playerReadyDivId, playerName) {
                            '</div>' +
                          '</div>');
 }
+function updateBoard(){
+  for (var i = 0; i < spacesOnBoard.length; i++) {
+    $('#'+i).find('.playerDeck').empty();
+    if(spacesOnBoard[i].spacePlayers.length > 0){
+      for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
+        $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
+      }
+    }
+  }
+}
 $(function(){
   spacesNumber = 15;
   var space;
@@ -218,18 +228,12 @@ $(function(){
       $('.winnerGif').removeClass('hidden');
 
     } else {
-      console.log(spacesOnBoard.spacePlayers);
+      updateBoard();
       makeBehavior(nextSpaceNumber);
-      //update board
-      console.log(spacesOnBoard.length);
-      for (var i = 0; i < spacesOnBoard.length; i++) {
-        $('#'+i).find('.playerDeck').empty();
-        if(spacesOnBoard[i].spacePlayers.length > 0){
-          for (var j = 0; j < spacesOnBoard[i].spacePlayers.length; j++) {
-            $('#'+i).find('.playerDeck').append('<div class="playerCard">' + spacesOnBoard[i].spacePlayers[j].playerSimbol+" "+ '</div>');
-          }
-        }
-      }
+      setTimeout(function(){
+        console.log('waiting 5 secs...');
+        updateBoard();
+    }, 5000);
     }
   });
 });
