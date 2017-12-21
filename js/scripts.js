@@ -203,7 +203,6 @@ function playerReadyRegistrationForms () {
       players.push(player3);
       spacesOnBoard[0].spacePlayers.push(player3);
       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[2].playerSimbol+" " + '</div>');
-
     }
   });
 
@@ -217,7 +216,6 @@ function playerReadyRegistrationForms () {
       playerReady($('#player4Ready'), playerFourUserName);
       pimg = "<img class='playerImg' src='" + $('#playerFourImg').attr('src') + "'>";
       player4 = new Player(playerFourUserName, pimg, 0, ON_HOLD_STATUS, 4);
-      // console.log(players);
       players.push(player4);
       spacesOnBoard[0].spacePlayers.push(player4);
       $('#0').find('.playerDeck').append('<div class="playerCard">' + players[3].playerSimbol+" " + '</div>');
