@@ -214,6 +214,7 @@ $(function(){
         $('#'+spacesOnBoard[0].spaceNumber).find('.playerDeck').append('<div class="playerCard">' +playerRegistration.playerSimbol+" " + '</div>');
       }
     }
+    player =
     $('.gameboard').removeClass('hidden');
     $('.span-pg').addClass('hidden');
     $('.nobg').addClass('hidden');
