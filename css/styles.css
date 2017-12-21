@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 *,
 *:before,
 *:after {
@@ -371,7 +374,7 @@ input[type=text] {
 .grid15 {
   background-image: url("https://78.media.tumblr.com/68fde309fd597365544d377021ade3fd/tumblr_mqkr98FoOA1qfe31yo1_250.gif");
   height: 15rem;
-  margin-top: -23%;
+  margin-top: -13%;
   width: 550px;
   border-radius: 50%;
   background-size: cover;
@@ -643,4 +646,29 @@ h4, .display-4 {
   position: fixed;
   margin-left: 90%;
   margin-top: 6%;
+}
+
+.winner {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  background-image: url("../img/youwin.gif");
+  background-size: 68%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  position: absolute;
+}
+
+.winner button {
+  margin:1em;
+    border:none;
+    padding:0.25em 3em 0.25em 1em;
+    text-align:left;
+    background:
+      linear-gradient(-120deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) top no-repeat,
+      linear-gradient(300deg, transparent 1em, #10601c 1.05em , #10601c 1.5em, transparent 1.45em, transparent 2em, #10601c 2.05em) bottom no-repeat ;
+    background-size: 100% 50%;
+    color:#b5e5b5
 }
