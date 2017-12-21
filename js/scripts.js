@@ -100,7 +100,7 @@ function makeBehavior(nextSpace){
     nextSpace.spacePlayers.push(player);
   }
   player = nextPlayerTurn;
-  return true;
+  return changePositionFlag || extraTurnFlag || skipTurnFlag;
 }
 
 function playJumanji(diceValue){
@@ -120,7 +120,7 @@ function playJumanji(diceValue){
   var currentSpace = findSpaceByNumber(player.playerCurrentPosition);
   currentSpace.removePlayer(player);
   nextSpace =  findSpaceByNumber(player.playerCurrentPosition + diceValue);
-  if (nextSpace.spaceNumber <= spacesNumber) {
+  if (nextSpace.spaceNumber < spacesNumber) {
     nextSpace.spacePlayers.push(player);
     player.playerCurrentPosition = nextSpace.spaceNumber;
     player.playerStatus = ON_HOLD_STATUS;
@@ -217,10 +217,10 @@ $(function(){
     var diceValue = throwDice();
     var nextSpaceNumber = playJumanji(diceValue);
 
-    $('.winnerGif').addClass('hidden');
 
 
     if (nextSpaceNumber === -1) {
+      $('.winnerGif').addClass('hidden');
       $('#14').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
       for (var i = 0; i < spacesOnBoard.length - 1; i++) {
         $('#'+i).find('.playerDeck').empty();
@@ -229,11 +229,40 @@ $(function(){
 
     } else {
       updateBoard();
-      makeBehavior(nextSpaceNumber);
-      setTimeout(function(){
-        console.log('waiting 5 secs...');
-        updateBoard();
-    }, 5000);
+      if(makeBehavior(nextSpaceNumber)){
+        //debugger;
+        switch (findSpaceByNumber(nextSpaceNumber).spaceBehavior) {
+          case MOVE_UP_2_SPACES_BEHAVIOR:
+            $('.winnerGif').removeClass('hidden');
+            break;
+          case EXTRA_TURN_BEHAVIOR:
+            $('.winnerGif').removeClass('hidden');
+            break;
+          case GO_BACK_TO_START_BEHAVIOR:
+            $('.winnerGif').removeClass('hidden');
+            break;
+          case GO_BACK_5_SPACES_BEHAVIOR:
+            $('.winnerGif').removeClass('hidden');
+            break;
+          case SKIP_TURN_BEHAVIOR:
+            $('.winnerGif').removeClass('hidden');
+            break;
+          default:
+
+        }
+        setTimeout(function(){
+          $('#test').toggle();
+          updateBoard();
+          $('.winnerGif').addClass('hidden');
+          $('.winnerGif').addClass('hidden');
+          $('.winnerGif').addClass('hidden');
+          $('.winnerGif').addClass('hidden');
+          $('.winnerGif').addClass('hidden');
+        }, 5000);
+
+        $('#test').toggle();
+      };
+
     }
   });
 });
