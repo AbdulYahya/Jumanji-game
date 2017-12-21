@@ -70,11 +70,11 @@ function makeBehavior(nextSpace){
   switch (behavior) {
     case GO_BACK_TO_START_BEHAVIOR:
       nextSpace =  findSpaceByNumber(nextSpaceOrigin.spaceNumber - nextSpace.spaceNumber);
-      changePositionFlag =true;
+      changePositionFlag = true;
       break;
     case MOVE_UP_2_SPACES_BEHAVIOR:
       nextSpace =  findSpaceByNumber(nextSpaceOrigin.spaceNumber + 2);
-      changePositionFlag =true;
+      changePositionFlag = true;
       break;
     case GO_BACK_5_SPACES_BEHAVIOR:
       nextSpace =  findSpaceByNumber(nextSpaceOrigin.spaceNumber -5);
@@ -190,9 +190,9 @@ $(function(){
     var idButton = splitId($(this).attr("id"));
     var playerName = $('#playerName'+idButton).val();
     if (playerName !== "") {
-      $('#playerNavName'+idButton).text(Capitalize(playerName));
-      $('#playerRegistration'+idButton).hide();
-      playerReady('#playerReady'+idButton, Capitalize(playerName));
+      $('#playerNavName' + idButton).text(Capitalize(playerName));
+      $('#playerRegistration' + idButton).hide();
+      playerReady('#playerReady' + idButton, Capitalize(playerName));
     }
   });
   $('#playerRegistrationForm').submit(function(event){
@@ -215,10 +215,17 @@ $(function(){
   $('#test').click(function(event){
     event.preventDefault();
     var diceValue = throwDice();
-    var nextSpaceNumber = playJumanji(13);
+    var nextSpaceNumber = playJumanji(diceValue);
+
+    $('.winnerGif').addClass('hidden');
+
+
     if (nextSpaceNumber === -1) {
-      console.log('Winner');
       $('#14').find('.playerDeck').append('<div class="playerCard">' + player.playerSimbol + " " + '</div>');
+      for (var i = 0; i < spacesOnBoard.length - 1; i++) {
+        $('#'+i).find('.playerDeck').empty();
+      }
+      $('.winnerGif').removeClass('hidden');
 
     } else {
       updateBoard();
@@ -227,7 +234,6 @@ $(function(){
         console.log('waiting 5 secs...');
         updateBoard();
     }, 5000);
-
     }
   });
 });
